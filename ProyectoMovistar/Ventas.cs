@@ -87,17 +87,18 @@ namespace ProyectoMovistar
                 sub = total;
             }
 
-            dataGridView1.DataSource = "";
+            dataGridView1.DataSource = null;
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
             lblSubtotal.Text = sub.ToString();
             lbltotal.Text = total.ToString();
-            rowEscribir = 1;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             // Llenado de los campos del formulario para guardarlos en la Base de Datos
-            //try
-            //{
+            try
+            {
                 clsDatosVenta objDao = new clsDatosVenta();
                 clsVenta objSolicitud = new clsVenta();
                 clsDVenta objDVenta = new clsDVenta();
@@ -123,12 +124,12 @@ namespace ProyectoMovistar
 
                 // Muestra mensaje de satisfaccion
                 MessageBox.Show("Solicitud Registrada", "Insertar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
-            //catch (Exception ex)
-            //{
-            //    // Muestra mensaje en caso de que haya errores
-            //    MessageBox.Show("Error al llenar los campos, verifique sus datos", "Datos ingresados incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
+            }
+            catch (Exception ex)
+            {
+                // Muestra mensaje en caso de que haya errores
+                MessageBox.Show("Error al llenar los campos, verifique sus datos", "Datos ingresados incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -157,7 +158,12 @@ namespace ProyectoMovistar
 
         private void button4_Click(object sender, EventArgs e)
         {
-            dataGridView2.DataSource = "";
+            dataGridView2.DataSource = null;
+            dataGridView2.Rows.Clear();
+            dataGridView2.Refresh();
+            dataGridView1.DataSource = null;
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
             lblCambio.Text = "0";
             lblSubtotal.Text = "0";
             lbltotal.Text = "0";
