@@ -20,7 +20,7 @@ namespace ProyectoMovistar
         int cambio = 0;
         int recibo = 0;
         int folio = 2;
-        int rowEscribir;
+        int idUsuario;
         clsValidaciones objValidaciones = new clsValidaciones();
         List<String> productos = new List<string>();
         public Ventas()
@@ -45,6 +45,10 @@ namespace ProyectoMovistar
             {
                 if (c.Name != "Cantidad") c.ReadOnly = true;
             }
+            // Aqui Va el Nombre de USUARIO
+            label13.Text = "Damian";
+            idUsuario = o.idUsuario(label13.Text);
+            label5.Text = o.folio().ToString();
 
         }
 
@@ -104,13 +108,12 @@ namespace ProyectoMovistar
             else
             {
                 // Llenado de los campos del formulario para guardarlos en la Base de Datos
-                try
-                {
+                //try
+                //{
                     clsDatosVenta objDao = new clsDatosVenta();
                 clsVenta objSolicitud = new clsVenta();
                 clsDVenta objDVenta = new clsDVenta();
-                objSolicitud.Folio = folio;
-                objSolicitud.IdUsuario = 1;
+                objSolicitud.IdUsuario = idUsuario;
                 objSolicitud.Subtotal = double.Parse(lblSubtotal.Text);
                 objSolicitud.Total = double.Parse(lbltotal.Text);
                 objSolicitud.Recibo = double.Parse(textBox1.Text);
@@ -120,7 +123,6 @@ namespace ProyectoMovistar
                 for (int iter = 0; iter < row; iter++)
                 {
                     dataGridView2.Rows.Add(1);
-                    objDVenta.Folio = folio;
                     objDVenta.Nombre = dataGridView2.Rows[iter].Cells[0].Value.ToString();
                     objDVenta.Precio = double.Parse(dataGridView2.Rows[iter].Cells[1].Value.ToString());
                     objDVenta.Cantidad = Int32.Parse(dataGridView2.Rows[iter].Cells[2].Value.ToString());
@@ -140,12 +142,13 @@ namespace ProyectoMovistar
                     lblCambio.Text = "0";
                     lblSubtotal.Text = "0";
                     lbltotal.Text = "0";
-                }
-                catch (Exception ex)
-            {
-                // Muestra mensaje en caso de que haya errores
-                MessageBox.Show("Error al llenar los campos, verifique sus datos", "Datos ingresados incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+                    textBox1.Text = "";
+            //    }
+            //    catch (Exception ex)
+            //{
+            //    // Muestra mensaje en caso de que haya errores
+            //    MessageBox.Show("Error al llenar los campos, verifique sus datos", "Datos ingresados incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //}
         }
 
         }

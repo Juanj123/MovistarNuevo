@@ -18,7 +18,6 @@ namespace capaDatos
             MySqlCommand cm;
             cone.conectar();
             cm = new MySqlCommand();
-            cm.Parameters.AddWithValue("@Folio", objProducto.Folio);
             cm.Parameters.AddWithValue("@IdUsuario", objProducto.IdUsuario);
             cm.Parameters.AddWithValue("@Subtotal", objProducto.Subtotal);
             cm.Parameters.AddWithValue("@Total", objProducto.Total);
@@ -40,12 +39,11 @@ namespace capaDatos
             MySqlCommand cm;
             cone.conectar();
             cm = new MySqlCommand();
-            cm.Parameters.AddWithValue("@Folio", objProducto.Folio);
             cm.Parameters.AddWithValue("@Nombre", objProducto.Nombre);
             cm.Parameters.AddWithValue("@Precio", objProducto.Precio);
             cm.Parameters.AddWithValue("@Cantidad", objProducto.Cantidad);
 
-            sql = "insert  into dventa value(@Folio,@Nombre,@Precio,@Cantidad);";
+            sql = "insert  into dventa value(null,@Nombre,@Precio,@Cantidad);";
             cm.CommandText = sql;
             cm.CommandType = CommandType.Text;
             cm.Connection = cone.cn;
@@ -114,6 +112,46 @@ namespace capaDatos
             {
                 clsInventario objUs = new clsInventario();
                 numero = objUs.Existencia = dr.GetInt32("existencia");
+            }
+            cone.cerrar();
+            return numero;
+        }
+        public int idUsuario(string usuario)
+        {
+            cone.conectar();
+            int numero = 0;
+            string sql;
+            MySqlCommand cm = new MySqlCommand();
+            MySqlDataReader dr;
+            sql = "select idUsuario from usuarios where nombre = '" + usuario + "';";
+            cm.CommandText = sql;
+            cm.CommandType = CommandType.Text;
+            cm.Connection = cone.cn;
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                clsUsuarios objUs = new clsUsuarios();
+                numero = objUs.IdUsuario = dr.GetInt32("idUsuario");
+            }
+            cone.cerrar();
+            return numero;
+        }
+        public int folio()
+        {
+            cone.conectar();
+            int numero = 0;
+            string sql;
+            MySqlCommand cm = new MySqlCommand();
+            MySqlDataReader dr;
+            sql = "select folio from ventas;";
+            cm.CommandText = sql;
+            cm.CommandType = CommandType.Text;
+            cm.Connection = cone.cn;
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                clsVenta objUs = new clsVenta();
+                numero = objUs.IdUsuario = dr.GetInt32("folio");
             }
             cone.cerrar();
             return numero;
