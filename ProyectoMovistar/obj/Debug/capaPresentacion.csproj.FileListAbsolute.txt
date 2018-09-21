@@ -143,3 +143,28 @@ C:\Users\Angel\Documents\repoMovistarNuevo3\MovistarNuevo\ProyectoMovistar\obj\D
 C:\Users\Angel\Documents\repoMovistarNuevo3\MovistarNuevo\ProyectoMovistar\obj\Debug\capaPresentacion.csproj.CopyComplete
 C:\Users\Angel\Documents\repoMovistarNuevo3\MovistarNuevo\ProyectoMovistar\obj\Debug\ProyectoMovistar.exe
 C:\Users\Angel\Documents\repoMovistarNuevo3\MovistarNuevo\ProyectoMovistar\obj\Debug\ProyectoMovistar.pdb
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\ProyectoMovistar\bin\Debug\ProyectoMovistar.exe.config
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\ProyectoMovistar\bin\Debug\ProyectoMovistar.exe
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\ProyectoMovistar\bin\Debug\ProyectoMovistar.pdb
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\ProyectoMovistar\bin\Debug\capaDatos.dll
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\ProyectoMovistar\bin\Debug\capaPojos.dll
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\ProyectoMovistar\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\ProyectoMovistar\bin\Debug\MySql.Data.dll
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\ProyectoMovistar\bin\Debug\capaDatos.pdb
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\ProyectoMovistar\bin\Debug\capaPojos.pdb
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\ProyectoMovistar\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\ProyectoMovistar\bin\Debug\MySql.Data.xml
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\ProyectoMovistar\obj\Debug\capaPresentacion.csprojAssemblyReference.cache
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\ProyectoMovistar\obj\Debug\ProyectoMovistar.Form1.resources
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\ProyectoMovistar\obj\Debug\ProyectoMovistar.Inventario.resources
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\ProyectoMovistar\obj\Debug\ProyectoMovistar.login.resources
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\ProyectoMovistar\obj\Debug\ProyectoMovistar.Properties.Resources.resources
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\ProyectoMovistar\obj\Debug\ProyectoMovistar.recuperarContrasenia.resources
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\ProyectoMovistar\obj\Debug\ProyectoMovistar.ReporteVenta.resources
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\ProyectoMovistar\obj\Debug\ProyectoMovistar.Usuarios.resources
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\ProyectoMovistar\obj\Debug\ProyectoMovistar.Ventas.resources
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\ProyectoMovistar\obj\Debug\capaPresentacion.csproj.GenerateResource.cache
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\ProyectoMovistar\obj\Debug\capaPresentacion.csproj.CoreCompileInputs.cache
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\ProyectoMovistar\obj\Debug\capaPresentacion.csproj.CopyComplete
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\ProyectoMovistar\obj\Debug\ProyectoMovistar.exe
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\ProyectoMovistar\obj\Debug\ProyectoMovistar.pdb

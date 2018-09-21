@@ -57,49 +57,56 @@ namespace ProyectoMovistar
                     clsDatosVenta ob = new clsDatosVenta();
                     List<clsInventario> pro;
                     pro = ob.getProductos(cmbProductos.Text);
-                    rowEscribir = rowEscribir + dataGridView1.Rows.Count - 1;
-                    dataGridView1.Rows.Add(1);
-
-                    dataGridView1.Rows[rowEscribir].Cells[0].Value = pro[0].Nombre;
-                    dataGridView1.Rows[rowEscribir].Cells[1].Value = pro[0].Precio;
-                    dataGridView1.Rows[rowEscribir].Cells[2].Value = "1";
-                    dataGridView1.Rows[rowEscribir].Cells[3].Value = pro[0].Descripcion;
-                    productos.Add(cmbProductos.Text);
+                    dataGridView1.Rows.Add(pro[0].Nombre,
+                    pro[0].Precio,
+                    "1",
+                    pro[0].Descripcion);
                 }
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            for (int iter = 0; iter < (dataGridView1.Rows.Count) - 1; iter++)
+            int i = ((dataGridView1.Rows.Count) - 1);
+            for(int iter = 0; iter < i; iter++)
             {
-                dataGridView2.Rows.Add(1);
-                dataGridView2.Rows[iter].Cells[0].Value = dataGridView1.Rows[iter].Cells[0].Value.ToString();
-                dataGridView2.Rows[iter].Cells[1].Value = dataGridView1.Rows[iter].Cells[1].Value.ToString();
-                dataGridView2.Rows[iter].Cells[2].Value = dataGridView1.Rows[iter].Cells[2].Value.ToString();
-                dataGridView2.Rows[iter].Cells[3].Value = dataGridView1.Rows[iter].Cells[3].Value.ToString();
-                total = Int32.Parse(dataGridView2.Rows[iter].Cells[1].Value.ToString()) + total;
-                cant = Int32.Parse(dataGridView2.Rows[iter].Cells[2].Value.ToString());
+                dataGridView2.Rows.Add(dataGridView1.Rows[iter].Cells[0].Value.ToString(),
+                    dataGridView1.Rows[iter].Cells[1].Value.ToString(),
+                    dataGridView1.Rows[iter].Cells[2].Value.ToString(),
+                    dataGridView1.Rows[iter].Cells[3].Value.ToString());
+            }
+            dataGridView1.DataSource = null;
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
+            int iterData = ((dataGridView2.Rows.Count) - 1);
+            total = 0;
+            for (int itera = 0; itera<iterData; itera++)
+            {
+                
+                total = Int32.Parse(dataGridView2.Rows[itera].Cells[1].Value.ToString()) + total;
+                cant = Int32.Parse(dataGridView2.Rows[itera].Cells[2].Value.ToString());
                 if (cant > 1)
                 {
                     total = total * cant;
                 }
                 sub = total;
+                lblSubtotal.Text = sub.ToString();
+                lbltotal.Text = total.ToString();
             }
-
-            dataGridView1.DataSource = null;
-            dataGridView1.Rows.Clear();
-            dataGridView1.Refresh();
-            lblSubtotal.Text = sub.ToString();
-            lbltotal.Text = total.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Llenado de los campos del formulario para guardarlos en la Base de Datos
-            try
+            if(textBox1.Text == "")
             {
-                clsDatosVenta objDao = new clsDatosVenta();
+                MessageBox.Show("Llene primero el campo de Recibo", "Datos ingresados incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                // Llenado de los campos del formulario para guardarlos en la Base de Datos
+                try
+                {
+                    clsDatosVenta objDao = new clsDatosVenta();
                 clsVenta objSolicitud = new clsVenta();
                 clsDVenta objDVenta = new clsDVenta();
                 objSolicitud.Folio = folio;
@@ -124,12 +131,23 @@ namespace ProyectoMovistar
 
                 // Muestra mensaje de satisfaccion
                 MessageBox.Show("Solicitud Registrada", "Insertar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
+                    dataGridView2.DataSource = null;
+                    dataGridView2.Rows.Clear();
+                    dataGridView2.Refresh();
+                    dataGridView1.DataSource = null;
+                    dataGridView1.Rows.Clear();
+                    dataGridView1.Refresh();
+                    lblCambio.Text = "0";
+                    lblSubtotal.Text = "0";
+                    lbltotal.Text = "0";
+                }
+                catch (Exception ex)
             {
                 // Muestra mensaje en caso de que haya errores
                 MessageBox.Show("Error al llenar los campos, verifique sus datos", "Datos ingresados incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -158,6 +176,18 @@ namespace ProyectoMovistar
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (dataGridView2.Rows.Count > 1)
+            {
+                dataGridView2.DataSource = null;
+                dataGridView2.Rows.Clear();
+                dataGridView2.Refresh();
+                dataGridView1.DataSource = null;
+                dataGridView1.Rows.Clear();
+                dataGridView1.Refresh();
+                lblCambio.Text = "0";
+                lblSubtotal.Text = "0";
+                lbltotal.Text = "0";
+            }
             dataGridView2.DataSource = null;
             dataGridView2.Rows.Clear();
             dataGridView2.Refresh();

@@ -16,3 +16,9 @@ C:\Users\Angel\Documents\repoMovistarNuevo3\MovistarNuevo\capaPojos\obj\Debug\ca
 C:\Users\Angel\Documents\repoMovistarNuevo3\MovistarNuevo\capaPojos\obj\Debug\capaPojos.csproj.CoreCompileInputs.cache
 C:\Users\Angel\Documents\repoMovistarNuevo3\MovistarNuevo\capaPojos\obj\Debug\capaPojos.dll
 C:\Users\Angel\Documents\repoMovistarNuevo3\MovistarNuevo\capaPojos\obj\Debug\capaPojos.pdb
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\capaPojos\bin\Debug\capaPojos.dll
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\capaPojos\bin\Debug\capaPojos.pdb
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\capaPojos\obj\Debug\capaPojos.csprojAssemblyReference.cache
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\capaPojos\obj\Debug\capaPojos.csproj.CoreCompileInputs.cache
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\capaPojos\obj\Debug\capaPojos.dll
+C:\Users\laser\Documents\11 Semestre\MovistarNuevo\capaPojos\obj\Debug\capaPojos.pdb
