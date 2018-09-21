@@ -1,0 +1,6 @@
+C:\Users\Angel\Documents\otroRepo\MovistarElChido\capaPojos\bin\Debug\capaPojos.dll
+C:\Users\Angel\Documents\otroRepo\MovistarElChido\capaPojos\bin\Debug\capaPojos.pdb
+C:\Users\Angel\Documents\otroRepo\MovistarElChido\capaPojos\obj\Debug\capaPojos.csprojResolveAssemblyReference.cache
+C:\Users\Angel\Documents\otroRepo\MovistarElChido\capaPojos\obj\Debug\capaPojos.csproj.CoreCompileInputs.cache
+C:\Users\Angel\Documents\otroRepo\MovistarElChido\capaPojos\obj\Debug\capaPojos.dll
+C:\Users\Angel\Documents\otroRepo\MovistarElChido\capaPojos\obj\Debug\capaPojos.pdb

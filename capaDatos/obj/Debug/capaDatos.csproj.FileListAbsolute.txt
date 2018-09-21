@@ -1,0 +1,11 @@
+C:\Users\Angel\Documents\otroRepo\MovistarElChido\capaDatos\bin\Debug\capaDatos.dll
+C:\Users\Angel\Documents\otroRepo\MovistarElChido\capaDatos\bin\Debug\capaDatos.pdb
+C:\Users\Angel\Documents\otroRepo\MovistarElChido\capaDatos\bin\Debug\capaPojos.dll
+C:\Users\Angel\Documents\otroRepo\MovistarElChido\capaDatos\bin\Debug\MySql.Data.dll
+C:\Users\Angel\Documents\otroRepo\MovistarElChido\capaDatos\bin\Debug\capaPojos.pdb
+C:\Users\Angel\Documents\otroRepo\MovistarElChido\capaDatos\bin\Debug\MySql.Data.xml
+C:\Users\Angel\Documents\otroRepo\MovistarElChido\capaDatos\obj\Debug\capaDatos.csprojResolveAssemblyReference.cache
+C:\Users\Angel\Documents\otroRepo\MovistarElChido\capaDatos\obj\Debug\capaDatos.csproj.CoreCompileInputs.cache
+C:\Users\Angel\Documents\otroRepo\MovistarElChido\capaDatos\obj\Debug\capaDatos.csproj.CopyComplete
+C:\Users\Angel\Documents\otroRepo\MovistarElChido\capaDatos\obj\Debug\capaDatos.dll
+C:\Users\Angel\Documents\otroRepo\MovistarElChido\capaDatos\obj\Debug\capaDatos.pdb
