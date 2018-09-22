@@ -20,6 +20,7 @@ namespace ProyectoMovistar
         }
         clsDatosInventario consulta = new clsDatosInventario();
         List<clsInventario> tabla = new List<clsInventario>();
+        clsValidaciones va = new clsValidaciones();
         String Direccion;
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -60,6 +61,13 @@ namespace ProyectoMovistar
             objDatosInventario.AgregarProducto(objProducto);
             // MUESTRA MENSAJE DE CONFIRMACION
             MessageBox.Show("Agregado", "Agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            txtClave.Text = "";
+            txtNombre.Text = "";
+            txtProovedor.Text = "";
+            txtPrecio.Text = "";
+            txtExistencia.Text = "";
+            txtDescripcion.Text = "";
+            pbProducto.Image = null;
             verProductos();
         }
 
@@ -105,6 +113,17 @@ namespace ProyectoMovistar
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            if (btnGuardar.Visible == false) {
+                btnGuardar.Visible = true;
+                btnModificar.Visible = false;
+                txtClave.Text = "";
+                txtNombre.Text = "";
+                txtProovedor.Text = "";
+                txtPrecio.Text = "";
+                txtExistencia.Text = "";
+                txtDescripcion.Text = "";
+                pbProducto.Image = null;
+            }
             txtClave.Text = "";
             txtNombre.Text = "";
             txtProovedor.Text = "";
@@ -152,6 +171,7 @@ namespace ProyectoMovistar
 
                     //verProductos();
                     MessageBox.Show("Producto Eliminado");
+                    verProductos();
                 }
             }
         }
@@ -161,6 +181,8 @@ namespace ProyectoMovistar
             btnModificar.Visible = false;
             verProductos();
             dataGridView1.AllowUserToAddRows = false;
+
+            rbnNombre.Checked = true;
         }
 
         private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
@@ -199,6 +221,51 @@ namespace ProyectoMovistar
                 }
 
             }
+        }
+
+        private void txtClave_KeyUp(object sender, KeyEventArgs e)
+        {
+           
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            va.Letras(e);
+        }
+
+        private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            va.NumerosDoubles(e);
+        }
+
+        private void txtProovedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            va.Letras(e);
+        }
+
+        private void txtExistencia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            va.Numeros(e);
+        }
+
+        private void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            va.Numeros_Letras(e);
+        }
+
+        private void txtClave_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            va.Numeros(e);
+        }
+
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            va.Numeros_Letras(e);
         }
     }
 }

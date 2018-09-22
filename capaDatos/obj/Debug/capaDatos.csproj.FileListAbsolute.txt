@@ -39,3 +39,13 @@ C:\Users\laser\Documents\11 Semestre\MovistarNuevo\capaDatos\obj\Debug\capaDatos
 C:\Users\laser\Documents\11 Semestre\MovistarNuevo\capaDatos\obj\Debug\capaDatos.csproj.CopyComplete
 C:\Users\laser\Documents\11 Semestre\MovistarNuevo\capaDatos\obj\Debug\capaDatos.dll
 C:\Users\laser\Documents\11 Semestre\MovistarNuevo\capaDatos\obj\Debug\capaDatos.pdb
+C:\Users\Juanjo\Desktop\NuevoMovistarChido\MovistarNuevo\capaDatos\bin\Debug\capaDatos.dll
+C:\Users\Juanjo\Desktop\NuevoMovistarChido\MovistarNuevo\capaDatos\bin\Debug\capaDatos.pdb
+C:\Users\Juanjo\Desktop\NuevoMovistarChido\MovistarNuevo\capaDatos\bin\Debug\capaPojos.dll
+C:\Users\Juanjo\Desktop\NuevoMovistarChido\MovistarNuevo\capaDatos\bin\Debug\capaPojos.pdb
+C:\Users\Juanjo\Desktop\NuevoMovistarChido\MovistarNuevo\capaDatos\bin\Debug\MySql.Data.xml
+C:\Users\Juanjo\Desktop\NuevoMovistarChido\MovistarNuevo\capaDatos\obj\Debug\capaDatos.csprojAssemblyReference.cache
+C:\Users\Juanjo\Desktop\NuevoMovistarChido\MovistarNuevo\capaDatos\obj\Debug\capaDatos.csproj.CoreCompileInputs.cache
+C:\Users\Juanjo\Desktop\NuevoMovistarChido\MovistarNuevo\capaDatos\obj\Debug\capaDatos.csproj.CopyComplete
+C:\Users\Juanjo\Desktop\NuevoMovistarChido\MovistarNuevo\capaDatos\obj\Debug\capaDatos.dll
+C:\Users\Juanjo\Desktop\NuevoMovistarChido\MovistarNuevo\capaDatos\obj\Debug\capaDatos.pdb
