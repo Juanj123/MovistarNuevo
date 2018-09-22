@@ -35,10 +35,10 @@ namespace ProyectoMovistar
             cmbProductos.AutoCompleteSource = AutoCompleteSource.CustomSource;
             cmbProductos.AutoCompleteMode = AutoCompleteMode.Suggest;
             AutoCompleteStringCollection datos = new AutoCompleteStringCollection();
-            for (int i = 0; i < o.getProducto()[0].Nombre.Length; i++)
+            for (int i = 0; i < lista.Count; i++)
             {
-                cmbProductos.Items.Insert(i, o.getProducto()[i].Nombre);
-                datos.Add((o.getProducto())[i].Nombre);
+                cmbProductos.Items.Insert(i, lista[i].Nombre);
+                datos.Add((lista[i].Nombre));
             }
             cmbProductos.AutoCompleteCustomSource = datos;
             foreach (DataGridViewColumn c in dataGridView1.Columns)
