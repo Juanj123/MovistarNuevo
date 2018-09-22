@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using capaDatos;
 using capaPojos;
+using System.IO;
+using Microsoft.VisualBasic.Devices;
 
 namespace ProyectoMovistar
 {
@@ -18,6 +20,7 @@ namespace ProyectoMovistar
         {
             InitializeComponent();
         }
+        Computer mycomputer = new Computer();
         clsDatosInventario consulta = new clsDatosInventario();
         List<clsInventario> tabla = new List<clsInventario>();
         clsValidaciones va = new clsValidaciones();
@@ -43,9 +46,10 @@ namespace ProyectoMovistar
                 pbProducto.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
-
+        string rutaFinal;
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            rutaFinal = @"C:\ImagenesProductos\" + Direccion.Substring(Direccion.LastIndexOf(@"\"));
             clsInventario objProducto = new clsInventario();
             clsDatosInventario objDatosInventario = new clsDatosInventario();
             //Se leen los datos de los txt
@@ -56,11 +60,28 @@ namespace ProyectoMovistar
             objProducto.Existencia = Convert.ToInt32(txtExistencia.Text);
             objProducto.Descripcion = txtDescripcion.Text;
             objProducto.Idusuario = objDatosInventario.getIdEmpleado(lblEmpleado.Text);
-            objProducto.RutaImg = Direccion;
+            objProducto.RutaImg = rutaFinal;
             // INSERTA AL PRODUCTO MEDIANTE EL MÉTODO
             objDatosInventario.AgregarProducto(objProducto);
             // MUESTRA MENSAJE DE CONFIRMACION
             MessageBox.Show("Agregado", "Agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //creas carpeta que contendra las imagenes de los productos
+            
+
+            
+            
+                if (Directory.Exists(@"C:\ImagenesProductos"))
+                {
+                    //MessageBox.Show("Capeta ya existe");
+                    mycomputer.FileSystem.MoveFile(Direccion,rutaFinal);
+                }
+                else {
+                   // MessageBox.Show("No existe Carpeta Creando..............");
+                    Directory.CreateDirectory(@"C:\ImagenesProductos\");
+
+                }
+            
+
             txtClave.Text = "";
             txtNombre.Text = "";
             txtProovedor.Text = "";
@@ -95,7 +116,7 @@ namespace ProyectoMovistar
             objProducto.Existencia = Convert.ToInt32(txtExistencia.Text);
             objProducto.Descripcion = txtDescripcion.Text;
             objProducto.Idusuario = objDatosInventario.getIdEmpleado(lblEmpleado.Text);
-            objProducto.RutaImg = Direccion;
+            objProducto.RutaImg = rutaFinal;
             // MUESTRA MENSAJE DE CONFIRMACION
             objDatosInventario.ModificarProducto(objProducto);
             MessageBox.Show("Producto Modificado", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
