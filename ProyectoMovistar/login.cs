@@ -115,13 +115,17 @@ namespace ProyectoMovistar
                             //Llamar al formulario Principal
                             principal frmPrincipal = new principal();
                             frmPrincipal.Show();
+                            frmPrincipal.lbTipo.Text = cbTipo.SelectedItem.ToString() + ":";
+                            frmPrincipal.lbUsuario.Text = txtUsuario.Text;
                         }
                         else if (datosLogin.iniciarSesionEm(login).Read() == true & cbTipo.SelectedItem.Equals("Empleado"))
                         {
                             this.Hide();
                             //Llamar al formulario Ventas
-                            Ventas frmVentas = new Ventas();
-                            frmVentas.Show();
+                            principal frmPrincipal = new principal();
+                            frmPrincipal.Show();
+                            frmPrincipal.lbTipo.Text = cbTipo.SelectedItem.ToString() + ":";
+                            frmPrincipal.lbUsuario.Text = txtUsuario.Text;
                         }
                         else
                         {

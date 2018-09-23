@@ -16,7 +16,7 @@ namespace ProyectoMovistar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Inventario());
+            Application.Run(new login());
         }
     }
 }

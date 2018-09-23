@@ -78,7 +78,7 @@ namespace ProyectoMovistar
                 txtCorreo.Text = dataGridView1[1, poc].Value.ToString();
 
                 txtContrasenia.Enabled = false;
-                cmbTipo.Enabled = false;
+                cmbTipo.Enabled = true;
                 btnAgregar.Enabled = false;
             }
             catch
@@ -131,8 +131,9 @@ namespace ProyectoMovistar
                 Actualizar();
                 habilitar();
                 limpiar();
+
             }
-            catch(Exception exc)
+            catch (Exception exc)
             {
                 MessageBox.Show("Usuario no eliminado", "Usuarios", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
             }

@@ -78,8 +78,9 @@ namespace ProyectoMovistar
                 else {
                    // MessageBox.Show("No existe Carpeta Creando..............");
                     Directory.CreateDirectory(@"C:\ImagenesProductos\");
+                    mycomputer.FileSystem.MoveFile(Direccion, rutaFinal);
 
-                }
+            }
             
 
             txtClave.Text = "";
