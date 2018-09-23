@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteVenta));
             this.label1 = new System.Windows.Forms.Label();
             this.cmbEmpleados = new System.Windows.Forms.ComboBox();
             this.dtpfecha = new System.Windows.Forms.DateTimePicker();
@@ -137,6 +138,7 @@
             this.Controls.Add(this.dtpfecha);
             this.Controls.Add(this.cmbEmpleados);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ReporteVenta";
             this.Text = "ReporteVenta";
             this.Load += new System.EventHandler(this.ReporteVenta_Load);
