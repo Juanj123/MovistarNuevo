@@ -36,13 +36,18 @@
             // 
             // btnRecuperar
             // 
+            this.btnRecuperar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnRecuperar.FlatAppearance.BorderSize = 0;
+            this.btnRecuperar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecuperar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecuperar.ForeColor = System.Drawing.Color.White;
             this.btnRecuperar.Location = new System.Drawing.Point(580, 20);
-            this.btnRecuperar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnRecuperar.Margin = new System.Windows.Forms.Padding(5);
             this.btnRecuperar.Name = "btnRecuperar";
             this.btnRecuperar.Size = new System.Drawing.Size(133, 34);
             this.btnRecuperar.TabIndex = 7;
             this.btnRecuperar.Text = "Recuperar";
-            this.btnRecuperar.UseVisualStyleBackColor = true;
+            this.btnRecuperar.UseVisualStyleBackColor = false;
             this.btnRecuperar.Click += new System.EventHandler(this.btnRecuperar_Click);
             // 
             // txtMensaje
@@ -50,7 +55,7 @@
             this.txtMensaje.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMensaje.ForeColor = System.Drawing.Color.Maroon;
             this.txtMensaje.Location = new System.Drawing.Point(21, 58);
-            this.txtMensaje.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtMensaje.Margin = new System.Windows.Forms.Padding(5);
             this.txtMensaje.Multiline = true;
             this.txtMensaje.Name = "txtMensaje";
             this.txtMensaje.ReadOnly = true;
@@ -60,7 +65,7 @@
             // txtCorreo
             // 
             this.txtCorreo.Location = new System.Drawing.Point(172, 20);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(5);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(371, 23);
             this.txtCorreo.TabIndex = 5;
@@ -79,6 +84,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(250)))), ((int)(((byte)(130)))));
             this.ClientSize = new System.Drawing.Size(1020, 278);
             this.Controls.Add(this.btnRecuperar);
             this.Controls.Add(this.txtMensaje);
@@ -86,7 +92,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "recuperarContrasenia";
             this.Text = "recuperarContrasenia";
             this.ResumeLayout(false);

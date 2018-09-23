@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using capaDatos;
 using capaPojos;
+using MySql.Data.MySqlClient;
 
 
 namespace ProyectoMovistar
@@ -100,6 +101,8 @@ namespace ProyectoMovistar
         {
             clsLogin login = new clsLogin();
             clsDatosLogin datosLogin = new clsDatosLogin();
+            MySqlDataReader dr;
+            
             if (!cbTipo.Text.Equals(""))
             {
                 login.Nombre = txtUsuario.Text;
@@ -109,24 +112,29 @@ namespace ProyectoMovistar
                 {
                     if (login.Contrasenia == txtContraseña.Text)
                     {
-                        if (datosLogin.iniciarSesionAd(login).Read() == true & cbTipo.SelectedItem.Equals("Administrador"))
+                        dr = datosLogin.iniciarSesionAd(login);
+                        //&cbTipo.SelectedItem.Equals("Administrador")
+                        if (dr.Read() == true )
                         {
                             this.Hide();
                             //Llamar al formulario Principal
+                            Program.tipo = dr["tipo"].ToString();
                             principal frmPrincipal = new principal();
                             frmPrincipal.Show();
                             frmPrincipal.lbTipo.Text = cbTipo.SelectedItem.ToString() + ":";
                             frmPrincipal.lbUsuario.Text = txtUsuario.Text;
                         }
-                        else if (datosLogin.iniciarSesionEm(login).Read() == true & cbTipo.SelectedItem.Equals("Empleado"))
-                        {
-                            this.Hide();
-                            //Llamar al formulario Ventas
-                            principal frmPrincipal = new principal();
-                            frmPrincipal.Show();
-                            frmPrincipal.lbTipo.Text = cbTipo.SelectedItem.ToString() + ":";
-                            frmPrincipal.lbUsuario.Text = txtUsuario.Text;
-                        }
+                        //else if (dr.Read() == true & cbTipo.SelectedItem.Equals("Empleado"))
+                        //{
+                        //    this.Hide();
+                        //    //Llamar al formulario Ventas
+                        //    Program.tipo = dr["tipo"].ToString();
+                        //    MessageBox.Show(Program.tipo = dr["tipo"].ToString());
+                        //    principal frmPrincipal = new principal();
+                        //    frmPrincipal.Show();
+                        //    frmPrincipal.lbTipo.Text = cbTipo.SelectedItem.ToString() + ":";
+                        //    frmPrincipal.lbUsuario.Text = txtUsuario.Text;
+                        //}
                         else
                         {
                             MessageBox.Show("Usuario o Contraseña incorrecta", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Error);

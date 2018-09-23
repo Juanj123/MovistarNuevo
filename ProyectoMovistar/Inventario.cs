@@ -47,8 +47,10 @@ namespace ProyectoMovistar
             }
         }
         string rutaFinal;
+        principal p = new principal();
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            
             rutaFinal = @"C:\ImagenesProductos\" + Direccion.Substring(Direccion.LastIndexOf(@"\"));
             clsInventario objProducto = new clsInventario();
             clsDatosInventario objDatosInventario = new clsDatosInventario();
@@ -59,7 +61,7 @@ namespace ProyectoMovistar
             objProducto.Proovedor = txtProovedor.Text;
             objProducto.Existencia = Convert.ToInt32(txtExistencia.Text);
             objProducto.Descripcion = txtDescripcion.Text;
-            objProducto.Idusuario = objDatosInventario.getIdEmpleado(lblEmpleado.Text);
+            objProducto.Idusuario = objDatosInventario.getIdEmpleado(p.lbUsuario.Text);
             objProducto.RutaImg = rutaFinal;
             // INSERTA AL PRODUCTO MEDIANTE EL MÉTODO
             objDatosInventario.AgregarProducto(objProducto);
@@ -116,7 +118,7 @@ namespace ProyectoMovistar
             objProducto.Proovedor = txtProovedor.Text;
             objProducto.Existencia = Convert.ToInt32(txtExistencia.Text);
             objProducto.Descripcion = txtDescripcion.Text;
-            objProducto.Idusuario = objDatosInventario.getIdEmpleado(lblEmpleado.Text);
+            objProducto.Idusuario = objDatosInventario.getIdEmpleado(p.lbUsuario.Text);
             objProducto.RutaImg = rutaFinal;
             // MUESTRA MENSAJE DE CONFIRMACION
             objDatosInventario.ModificarProducto(objProducto);
@@ -288,6 +290,34 @@ namespace ProyectoMovistar
         private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
             va.Numeros_Letras(e);
+        }
+
+        private void lblEmpleado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.dataGridView1.Columns[e.ColumnIndex].Name == "Existencia")
+            {
+                if (Convert.ToInt32(e.Value) <= 10)
+                {
+                    e.CellStyle.ForeColor = Color.White;
+                    e.CellStyle.BackColor = Color.Orange;
+
+                }
+            }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtProovedor_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

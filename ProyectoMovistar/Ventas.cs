@@ -46,8 +46,8 @@ namespace ProyectoMovistar
                 if (c.Name != "Cantidad") c.ReadOnly = true;
             }
             // Aqui Va el Nombre de USUARIO
-            label13.Text = "Damian";
-            idUsuario = o.idUsuario(label13.Text);
+            principal P = new principal();
+            idUsuario = o.idUsuario(P.lbUsuario.Text);
             label5.Text = o.folio().ToString();
 
         }
@@ -200,6 +200,11 @@ namespace ProyectoMovistar
             lblCambio.Text = "0";
             lblSubtotal.Text = "0";
             lbltotal.Text = "0";
+        }
+
+        private void lblSubtotal_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

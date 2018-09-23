@@ -40,18 +40,12 @@ namespace ProyectoMovistar
 
         private void btnVer_Click(object sender, EventArgs e)
         {
-            string mes = Convert.ToString(dtpfecha.Value.Month);
-            string dia = Convert.ToString(dtpfecha.Value.Day);
-            string anio = Convert.ToString(dtpfecha.Value.Year);
-            string fecha = anio + "-" + mes + "-" + dia;
 
             if (!cmbEmpleados.Text.Equals(""))
             {
+                dgVenta.DataSource = daoReporte.MostrarVenta(daoReporte.obtenerId(cmbEmpleados.SelectedItem.ToString()), dtpfecha.Text);
 
-
-                dgVenta.DataSource = daoReporte.MostrarVenta(daoReporte.obtenerId(cmbEmpleados.SelectedItem.ToString()), fecha);
-
-                txtTotal.Text = Convert.ToString(daoReporte.obtenerTotal(daoReporte.obtenerId(cmbEmpleados.SelectedItem.ToString()), fecha));
+                txtTotal.Text = Convert.ToString(daoReporte.obtenerTotal(daoReporte.obtenerId(cmbEmpleados.SelectedItem.ToString()), dtpfecha.Text));
             }
             else
             {

@@ -18,6 +18,16 @@ namespace ProyectoMovistar
             InitializeComponent();
         }
 
+        private void privilegioUsuario()
+        {
+            if (Program.tipo != "Administrador")
+            {
+                btnInventario.Visible = false;
+                btnReporte.Visible = false;
+                btnUsuarios.Visible = false;
+            }
+        }
+
         #region funcionalidad de la principal 
 
         private int tolerance = 12;
@@ -79,7 +89,7 @@ namespace ProyectoMovistar
 
         private void principal_Load(object sender, EventArgs e)
         {
-
+            privilegioUsuario();
         }
 
         int lx, ly;

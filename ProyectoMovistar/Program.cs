@@ -8,6 +8,9 @@ namespace ProyectoMovistar
 {
     static class Program
     {
+        // privilegios
+        public static String tipo;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

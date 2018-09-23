@@ -50,6 +50,8 @@
             // 
             // cmbEmpleados
             // 
+            this.cmbEmpleados.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbEmpleados.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEmpleados.FormattingEnabled = true;
             this.cmbEmpleados.Location = new System.Drawing.Point(111, 18);
@@ -59,7 +61,9 @@
             // 
             // dtpfecha
             // 
-            this.dtpfecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpfecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpfecha.CustomFormat = "yyyy-MM-dd";
+            this.dtpfecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpfecha.Location = new System.Drawing.Point(494, 26);
             this.dtpfecha.Name = "dtpfecha";
             this.dtpfecha.Size = new System.Drawing.Size(214, 20);
@@ -69,7 +73,14 @@
             // 
             this.dgVenta.AllowUserToAddRows = false;
             this.dgVenta.AllowUserToDeleteRows = false;
+            this.dgVenta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgVenta.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgVenta.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(250)))), ((int)(((byte)(130)))));
+            this.dgVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgVenta.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(250)))), ((int)(((byte)(130)))));
             this.dgVenta.Location = new System.Drawing.Point(43, 105);
             this.dgVenta.Name = "dgVenta";
             this.dgVenta.ReadOnly = true;
@@ -78,6 +89,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(492, 338);
@@ -88,6 +100,7 @@
             // 
             // txtTotal
             // 
+            this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTotal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.Location = new System.Drawing.Point(541, 335);
             this.txtTotal.Name = "txtTotal";
@@ -97,19 +110,26 @@
             // 
             // btnVer
             // 
+            this.btnVer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnVer.FlatAppearance.BorderSize = 0;
+            this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVer.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVer.ForeColor = System.Drawing.Color.White;
             this.btnVer.Location = new System.Drawing.Point(713, 115);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(75, 23);
             this.btnVer.TabIndex = 7;
             this.btnVer.Text = "ver";
-            this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.UseVisualStyleBackColor = false;
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // ReporteVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(250)))), ((int)(((byte)(130)))));
+            this.ClientSize = new System.Drawing.Size(800, 456);
             this.Controls.Add(this.btnVer);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.label2);
