@@ -85,6 +85,7 @@
             this.pnlPrincipa.Name = "pnlPrincipa";
             this.pnlPrincipa.Size = new System.Drawing.Size(822, 618);
             this.pnlPrincipa.TabIndex = 2;
+            this.pnlPrincipa.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPrincipa_Paint);
             // 
             // pictureBox1
             // 
@@ -200,7 +201,7 @@
             this.lbFecha.AutoSize = true;
             this.lbFecha.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFecha.ForeColor = System.Drawing.Color.White;
-            this.lbFecha.Location = new System.Drawing.Point(3, 462);
+            this.lbFecha.Location = new System.Drawing.Point(38, 467);
             this.lbFecha.Name = "lbFecha";
             this.lbFecha.Size = new System.Drawing.Size(65, 22);
             this.lbFecha.TabIndex = 8;
@@ -209,11 +210,11 @@
             // lbHora
             // 
             this.lbHora.AutoSize = true;
-            this.lbHora.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHora.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHora.ForeColor = System.Drawing.Color.White;
-            this.lbHora.Location = new System.Drawing.Point(3, 440);
+            this.lbHora.Location = new System.Drawing.Point(36, 401);
             this.lbHora.Name = "lbHora";
-            this.lbHora.Size = new System.Drawing.Size(65, 22);
+            this.lbHora.Size = new System.Drawing.Size(96, 33);
             this.lbHora.TabIndex = 7;
             this.lbHora.Text = "label1";
             // 
@@ -222,7 +223,7 @@
             this.lbUsuario.AutoSize = true;
             this.lbUsuario.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUsuario.ForeColor = System.Drawing.Color.White;
-            this.lbUsuario.Location = new System.Drawing.Point(4, 148);
+            this.lbUsuario.Location = new System.Drawing.Point(52, 162);
             this.lbUsuario.Name = "lbUsuario";
             this.lbUsuario.Size = new System.Drawing.Size(45, 17);
             this.lbUsuario.TabIndex = 6;
@@ -233,7 +234,7 @@
             this.lbTipo.AutoSize = true;
             this.lbTipo.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTipo.ForeColor = System.Drawing.Color.White;
-            this.lbTipo.Location = new System.Drawing.Point(3, 119);
+            this.lbTipo.Location = new System.Drawing.Point(51, 130);
             this.lbTipo.Name = "lbTipo";
             this.lbTipo.Size = new System.Drawing.Size(52, 19);
             this.lbTipo.TabIndex = 5;

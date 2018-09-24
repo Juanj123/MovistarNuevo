@@ -20,6 +20,7 @@ namespace ProyectoMovistar
         {
             InitializeComponent();
         }
+        
         Computer mycomputer = new Computer();
         clsDatosInventario consulta = new clsDatosInventario();
         List<clsInventario> tabla = new List<clsInventario>();
@@ -118,7 +119,7 @@ namespace ProyectoMovistar
             objProducto.Proovedor = txtProovedor.Text;
             objProducto.Existencia = Convert.ToInt32(txtExistencia.Text);
             objProducto.Descripcion = txtDescripcion.Text;
-            objProducto.Idusuario = objDatosInventario.getIdEmpleado(p.lbUsuario.Text);
+            objProducto.Idusuario = objDatosInventario.getIdEmpleado(p.lbUsuario.ToString());
             objProducto.RutaImg = rutaFinal;
             // MUESTRA MENSAJE DE CONFIRMACION
             objDatosInventario.ModificarProducto(objProducto);

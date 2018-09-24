@@ -154,6 +154,28 @@ namespace capaDatos
                 numero = objUs.IdUsuario = dr.GetInt32("folio");
             }
             cone.cerrar();
+            numero = numero + 1;
+            return numero;
+        }
+
+        public int getPrecio(string producto)
+        {
+            cone.conectar();
+            int numero = 0;
+            string sql;
+            MySqlCommand cm = new MySqlCommand();
+            MySqlDataReader dr;
+            sql = "select precio from inventario where nombre = '" + producto + "';";
+            cm.CommandText = sql;
+            cm.CommandType = CommandType.Text;
+            cm.Connection = cone.cn;
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                clsInventario objUs = new clsInventario();
+                numero = objUs.Existencia = dr.GetInt32("precio");
+            }
+            cone.cerrar();
             return numero;
         }
     }

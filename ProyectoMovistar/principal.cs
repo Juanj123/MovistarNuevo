@@ -169,6 +169,11 @@ namespace ProyectoMovistar
 
         }
 
+        private void pnlPrincipa_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void btnMaximizar_Click(object sender, EventArgs e)
         {
             lx = this.Location.X;
