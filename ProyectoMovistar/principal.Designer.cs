@@ -100,6 +100,7 @@
             // 
             // pnlTitulo
             // 
+            this.pnlTitulo.BackColor = System.Drawing.Color.White;
             this.pnlTitulo.Controls.Add(this.btnMinimizar);
             this.pnlTitulo.Controls.Add(this.btnRestaurar);
             this.pnlTitulo.Controls.Add(this.btnMaximizar);
@@ -187,6 +188,7 @@
             // 
             // btnCerrarS
             // 
+            this.btnCerrarS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarS.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarS.Image")));
             this.btnCerrarS.Location = new System.Drawing.Point(42, 538);
             this.btnCerrarS.Name = "btnCerrarS";

@@ -42,7 +42,7 @@
             this.btnRecuperar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRecuperar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecuperar.ForeColor = System.Drawing.Color.White;
-            this.btnRecuperar.Location = new System.Drawing.Point(580, 20);
+            this.btnRecuperar.Location = new System.Drawing.Point(524, 17);
             this.btnRecuperar.Margin = new System.Windows.Forms.Padding(5);
             this.btnRecuperar.Name = "btnRecuperar";
             this.btnRecuperar.Size = new System.Drawing.Size(133, 34);
@@ -60,12 +60,12 @@
             this.txtMensaje.Multiline = true;
             this.txtMensaje.Name = "txtMensaje";
             this.txtMensaje.ReadOnly = true;
-            this.txtMensaje.Size = new System.Drawing.Size(523, 172);
+            this.txtMensaje.Size = new System.Drawing.Size(636, 172);
             this.txtMensaje.TabIndex = 6;
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(172, 20);
+            this.txtCorreo.Location = new System.Drawing.Point(126, 20);
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(5);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(371, 23);
@@ -74,19 +74,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(17, 23);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 17);
+            this.label1.Size = new System.Drawing.Size(112, 17);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Ingresa tu gmail";
+            this.label1.Text = "Ingresa tu gmail:";
             // 
             // recuperarContrasenia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(250)))), ((int)(((byte)(130)))));
-            this.ClientSize = new System.Drawing.Size(1020, 278);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(678, 251);
             this.Controls.Add(this.btnRecuperar);
             this.Controls.Add(this.txtMensaje);
             this.Controls.Add(this.txtCorreo);

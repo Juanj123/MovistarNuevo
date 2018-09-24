@@ -138,7 +138,7 @@ namespace ProyectoMovistar
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel<Ventas>();
+            AbrirFormEnPanel<VemtaNuevo>();
         }
 
         private void btnInventario_Click(object sender, EventArgs e)

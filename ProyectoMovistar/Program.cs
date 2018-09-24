@@ -19,7 +19,7 @@ namespace ProyectoMovistar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new VemtaNuevo());
+            Application.Run(new login());
         }
     }
 }
