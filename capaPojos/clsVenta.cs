@@ -9,19 +9,17 @@ namespace capaPojos
     public class clsVenta
     {
         int folio;
-        int idUsuario;
-        double subtotal;
+        string nombre;
+        int precio;
+        int cantidad;
         double total;
-        double recibo;
-        double cambio;
-        string fecha;
+        
 
         public int Folio { get => folio; set => folio = value; }
-        public int IdUsuario { get => idUsuario; set => idUsuario = value; }
-        public double Subtotal { get => subtotal; set => subtotal = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public int Precio { get => precio; set => precio = value; }
+        public int Cantidad { get => cantidad; set => cantidad = value; }
         public double Total { get => total; set => total = value; }
-        public double Recibo { get => recibo; set => recibo = value; }
-        public double Cambio { get => cambio; set => cambio = value; }
-        public string Fecha { get => fecha; set => fecha = value; }
+        
     }
 }

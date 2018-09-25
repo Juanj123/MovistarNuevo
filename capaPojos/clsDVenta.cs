@@ -9,13 +9,16 @@ namespace capaPojos
     public class clsDVenta
     {
         int folio;
-        string nombre;
-        double precio;
-        int cantidad;
+        int idUusario;
+        string fecha;
+        double recibo;
+        double cambio;
+
 
         public int Folio { get => folio; set => folio = value; }
-        public string Nombre { get => nombre; set => nombre = value; }
-        public double Precio { get => precio; set => precio = value; }
-        public int Cantidad { get => cantidad; set => cantidad = value; }
+        public int IdUusario { get => idUusario; set => idUusario = value; }
+        public string Fecha { get => fecha; set => fecha = value; }
+        public double Recibo { get => recibo; set => recibo = value; }
+        public double Cambio { get => cambio; set => cambio = value; }
     }
 }

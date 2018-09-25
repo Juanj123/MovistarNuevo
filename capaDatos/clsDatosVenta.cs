@@ -18,14 +18,13 @@ namespace capaDatos
             MySqlCommand cm;
             cone.conectar();
             cm = new MySqlCommand();
-            cm.Parameters.AddWithValue("@IdUsuario", objProducto.IdUsuario);
-            cm.Parameters.AddWithValue("@Subtotal", objProducto.Subtotal);
-            cm.Parameters.AddWithValue("@Total", objProducto.Total);
-            cm.Parameters.AddWithValue("@Recibo", objProducto.Recibo);
-            cm.Parameters.AddWithValue("@Cambio", objProducto.Cambio);
-            cm.Parameters.AddWithValue("@Fecha", objProducto.Fecha);
+            cm.Parameters.AddWithValue("@folio", objProducto.Folio);
+            cm.Parameters.AddWithValue("@nombre", objProducto.Nombre);
+            cm.Parameters.AddWithValue("@precio", objProducto.Precio);
+            cm.Parameters.AddWithValue("@cantidad", objProducto.Cantidad);
+            cm.Parameters.AddWithValue("@total", objProducto.Total);
 
-            sql = "insert into ventas value(null, @IdUsuario, @Subtotal, @Total, @Recibo, @Cambio, @Fecha);";
+            sql = "insert into ventas value(@folio, @nombre, @precio, @cantidad, @total);";
             cm.CommandText = sql;
             cm.CommandType = CommandType.Text;
             cm.Connection = cone.cn;
@@ -39,11 +38,13 @@ namespace capaDatos
             MySqlCommand cm;
             cone.conectar();
             cm = new MySqlCommand();
-            cm.Parameters.AddWithValue("@Nombre", objProducto.Nombre);
-            cm.Parameters.AddWithValue("@Precio", objProducto.Precio);
-            cm.Parameters.AddWithValue("@Cantidad", objProducto.Cantidad);
+            cm.Parameters.AddWithValue("@folio", objProducto.Folio);
+            cm.Parameters.AddWithValue("@idUsuario", objProducto.IdUusario);
+            cm.Parameters.AddWithValue("@fecha", objProducto.Fecha);
+            cm.Parameters.AddWithValue("@recibo", objProducto.Recibo);
+            cm.Parameters.AddWithValue("@cambio", objProducto.Cambio);
 
-            sql = "insert  into dventa value(null,@Nombre,@Precio,@Cantidad);";
+            sql = "insert  into dventa value(@folio,@idUsuario,@fecha,@recibo, @cambio);";
             cm.CommandText = sql;
             cm.CommandType = CommandType.Text;
             cm.Connection = cone.cn;
@@ -151,7 +152,7 @@ namespace capaDatos
             while (dr.Read())
             {
                 clsVenta objUs = new clsVenta();
-                numero = objUs.IdUsuario = dr.GetInt32("folio");
+                numero = dr.GetInt32("folio");
             }
             cone.cerrar();
             numero = numero + 1;

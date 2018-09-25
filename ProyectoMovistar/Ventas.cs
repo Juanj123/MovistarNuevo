@@ -110,39 +110,39 @@ namespace ProyectoMovistar
                 // Llenado de los campos del formulario para guardarlos en la Base de Datos
                 //try
                 //{
-                    clsDatosVenta objDao = new clsDatosVenta();
-                clsVenta objSolicitud = new clsVenta();
-                clsDVenta objDVenta = new clsDVenta();
-                objSolicitud.IdUsuario = idUsuario;
-                objSolicitud.Subtotal = double.Parse(lblSubtotal.Text);
-                objSolicitud.Total = double.Parse(lbltotal.Text);
-                objSolicitud.Recibo = double.Parse(textBox1.Text);
-                objSolicitud.Cambio = double.Parse(lblCambio.Text);
-                objSolicitud.Fecha = dateTimePicker1.Text;
-                int row = ((dataGridView2.Rows.Count) - 1);
-                for (int iter = 0; iter < row; iter++)
-                {
-                    dataGridView2.Rows.Add(1);
-                    objDVenta.Nombre = dataGridView2.Rows[iter].Cells[0].Value.ToString();
-                    objDVenta.Precio = double.Parse(dataGridView2.Rows[iter].Cells[1].Value.ToString());
-                    objDVenta.Cantidad = Int32.Parse(dataGridView2.Rows[iter].Cells[2].Value.ToString());
-                    objDao.AgregarDVenta(objDVenta);
-                }
-                // Se insertan los datos de venta
-                objDao.AgregarProducto(objSolicitud);
+                //    clsDatosVenta objDao = new clsDatosVenta();
+                //clsVenta objSolicitud = new clsVenta();
+                //clsDVenta objDVenta = new clsDVenta();
+                //objSolicitud.IdUsuario = idUsuario;
+                //objSolicitud.Subtotal = double.Parse(lblSubtotal.Text);
+                //objSolicitud.Total = double.Parse(lbltotal.Text);
+                //objSolicitud.Recibo = double.Parse(textBox1.Text);
+                //objSolicitud.Cambio = double.Parse(lblCambio.Text);
+                //objSolicitud.Fecha = dateTimePicker1.Text;
+                //int row = ((dataGridView2.Rows.Count) - 1);
+                //for (int iter = 0; iter < row; iter++)
+                //{
+                //    dataGridView2.Rows.Add(1);
+                //    objDVenta.Nombre = dataGridView2.Rows[iter].Cells[0].Value.ToString();
+                //    objDVenta.Precio = double.Parse(dataGridView2.Rows[iter].Cells[1].Value.ToString());
+                //    objDVenta.Cantidad = Int32.Parse(dataGridView2.Rows[iter].Cells[2].Value.ToString());
+                //    objDao.AgregarDVenta(objDVenta);
+                //}
+                //// Se insertan los datos de venta
+                //objDao.AgregarProducto(objSolicitud);
 
-                // Muestra mensaje de satisfaccion
-                MessageBox.Show("Solicitud Registrada", "Insertar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dataGridView2.DataSource = null;
-                    dataGridView2.Rows.Clear();
-                    dataGridView2.Refresh();
-                    dataGridView1.DataSource = null;
-                    dataGridView1.Rows.Clear();
-                    dataGridView1.Refresh();
-                    lblCambio.Text = "0";
-                    lblSubtotal.Text = "0";
-                    lbltotal.Text = "0";
-                    textBox1.Text = "";
+                //// Muestra mensaje de satisfaccion
+                //MessageBox.Show("Solicitud Registrada", "Insertar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //    dataGridView2.DataSource = null;
+                //    dataGridView2.Rows.Clear();
+                //    dataGridView2.Refresh();
+                //    dataGridView1.DataSource = null;
+                //    dataGridView1.Rows.Clear();
+                //    dataGridView1.Refresh();
+                //    lblCambio.Text = "0";
+                //    lblSubtotal.Text = "0";
+                //    lbltotal.Text = "0";
+                //    textBox1.Text = "";
             //    }
             //    catch (Exception ex)
             //{
