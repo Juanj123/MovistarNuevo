@@ -14,13 +14,14 @@ namespace ProyectoMovistar
 {
     public partial class VemtaNuevo : Form
     {
-        public VemtaNuevo()
+        public VemtaNuevo(string usuario)
         {
             InitializeComponent();
         }
         clsDatosVenta v = new clsDatosVenta();
         private void VemtaNuevo_Load(object sender, EventArgs e)
         {
+            MessageBox.Show();
             generaColumnas();
 
             txtBuscarProducto.AutoCompleteCustomSource = cargarDatos();
@@ -85,12 +86,12 @@ namespace ProyectoMovistar
             VentaList.Items.Add(elementoListView);
 
             clsVenta ven = new clsVenta();
-            ven.Folio = Convert.ToInt32(lblFolio.Text);
-            ven.Nombre = varProducto;
-            ven.Precio = varPrecio;
-            ven.Cantidad = varCantidad;
-            ven.Total = total;
-            listaVenta.Add(ven);
+            //ven.Folio = Convert.ToInt32(lblFolio.Text);
+            //ven.IdUusario = ;
+            //ven.Precio = varPrecio;
+            //ven.Cantidad = varCantidad;
+            //ven.Total = total;
+            //listaVenta.Add(ven);
 
             to = to + Convert.ToInt32(total);
             txtTotal.Text = Convert.ToString(to);
@@ -130,25 +131,26 @@ namespace ProyectoMovistar
                 clsDatosVenta objDao = new clsDatosVenta();
                 clsVenta objSolicitud = new clsVenta();
                 clsDVenta objDVenta = new clsDVenta();
-                objDVenta.Folio =Convert.ToInt32(lblFolio.Text);
-                objDVenta.IdUusario = 1;
-                objDVenta.Fecha = dtpFecha.Text;
-                objDVenta.Recibo = Convert.ToInt32(txtRecibi.Text);
-                objDVenta.Cambio = Convert.ToDouble(txtCambio.Text);
+                //objDVenta.Folio =Convert.ToInt32(lblFolio.Text);
+                //objDVenta.IdUusario = 1;
+                //objDVenta.Fecha = dtpFecha.Text;
+                //objDVenta.Recibo = Convert.ToInt32(txtRecibi.Text);
+                //objDVenta.Cambio = Convert.ToDouble(txtCambio.Text);
 
-                foreach (clsVenta item in listaVenta)
-                {
-                    objSolicitud.Folio = item.Folio;
-                    objSolicitud.Nombre = item.Nombre;
-                    objSolicitud.Precio = item.Precio;
-                    objSolicitud.Cantidad = item.Cantidad;
-                    objSolicitud.Total = item.Total;
-                    objDao.AgregarProducto(objSolicitud);
-                }
-                
-                objDao.AgregarDVenta(objDVenta);
-              
-                
+                //foreach (clsVenta item in listaVenta)
+                //{
+                //    objDVenta.Folio = item.Folio;
+                //    objDVenta.Nombre = item.Nombre;
+                //    objDVenta.Precio = item.Precio;
+                //    objSolicitud.Cantidad = item.Cantidad;
+                //    objSolicitud.Total = item.Total;
+                //    objDao.AgregarDVenta(objDVenta);
+                    
+                //}
+
+                objDao.AgregarProducto(objSolicitud);
+
+
 
                 // Muestra mensaje de satisfaccion
                 MessageBox.Show("Venta Realizada con Exito", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -230,6 +230,7 @@
             this.lbUsuario.Size = new System.Drawing.Size(45, 17);
             this.lbUsuario.TabIndex = 6;
             this.lbUsuario.Text = "label1";
+            this.lbUsuario.Click += new System.EventHandler(this.lbUsuario_Click);
             // 
             // lbTipo
             // 

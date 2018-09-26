@@ -208,6 +208,14 @@ namespace ProyectoMovistar
             dataGridView1.AllowUserToAddRows = false;
 
             rbnNombre.Checked = true;
+
+            principal n = new principal();
+            n.pasado += new principal.delegar(ejecutar);
+           
+        }
+
+        public void ejecutar(string dato) {
+            MessageBox.Show(dato);
         }
 
         private void txtBuscar_KeyUp(object sender, KeyEventArgs e)

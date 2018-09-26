@@ -11,8 +11,10 @@ using System.Runtime.InteropServices;
 
 namespace ProyectoMovistar
 {
+
     public partial class principal : Form
     {
+        public string usuario;
         public principal()
         {
             InitializeComponent();
@@ -86,9 +88,12 @@ namespace ProyectoMovistar
         {
 
         }
-
+        public delegate void delegar(string cadena);
+        public event delegar pasado;
+     
         private void principal_Load(object sender, EventArgs e)
         {
+            usuario = lbUsuario.Text;
             privilegioUsuario();
         }
 
@@ -138,6 +143,7 @@ namespace ProyectoMovistar
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
+            pasado(lbUsuario.Text);
             AbrirFormEnPanel<VemtaNuevo>();
         }
 
@@ -170,6 +176,11 @@ namespace ProyectoMovistar
         }
 
         private void pnlPrincipa_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbUsuario_Click(object sender, EventArgs e)
         {
 
         }
