@@ -19,12 +19,12 @@ namespace capaDatos
             cone.conectar();
             cm = new MySqlCommand();
             cm.Parameters.AddWithValue("@folio", objProducto.Folio);
-            cm.Parameters.AddWithValue("@nombre", objProducto.Nombre);
-            cm.Parameters.AddWithValue("@precio", objProducto.Precio);
-            cm.Parameters.AddWithValue("@cantidad", objProducto.Cantidad);
-            cm.Parameters.AddWithValue("@total", objProducto.Total);
+            cm.Parameters.AddWithValue("@idUsuario", objProducto.IdUusario);
+            cm.Parameters.AddWithValue("@fecha", objProducto.Fecha);
+            cm.Parameters.AddWithValue("@recibo", objProducto.Recibo);
+            cm.Parameters.AddWithValue("@cambio", objProducto.Cambio);
 
-            sql = "insert into ventas value(@folio, @nombre, @precio, @cantidad, @total);";
+            sql = "insert into ventas value(@folio, @idUsuario, @fecha, @recibo, @cambio);";
             cm.CommandText = sql;
             cm.CommandType = CommandType.Text;
             cm.Connection = cone.cn;
@@ -39,12 +39,12 @@ namespace capaDatos
             cone.conectar();
             cm = new MySqlCommand();
             cm.Parameters.AddWithValue("@folio", objProducto.Folio);
-            cm.Parameters.AddWithValue("@idUsuario", objProducto.IdUusario);
-            cm.Parameters.AddWithValue("@fecha", objProducto.Fecha);
-            cm.Parameters.AddWithValue("@recibo", objProducto.Recibo);
-            cm.Parameters.AddWithValue("@cambio", objProducto.Cambio);
+            cm.Parameters.AddWithValue("@nombreProduct", objProducto.Nombre);
+            cm.Parameters.AddWithValue("@precioProduct", objProducto.Precio);
+            cm.Parameters.AddWithValue("@cantidadProduct", objProducto.Cantidad);
+            cm.Parameters.AddWithValue("@total", objProducto.Total);
 
-            sql = "insert  into dventa value(@folio,@idUsuario,@fecha,@recibo, @cambio);";
+            sql = "insert  into dventas value(@folio,@nombreProduct,@precioProduct,@cantidadProduct, @total);";
             cm.CommandText = sql;
             cm.CommandType = CommandType.Text;
             cm.Connection = cone.cn;

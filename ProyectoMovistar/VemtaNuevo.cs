@@ -14,14 +14,13 @@ namespace ProyectoMovistar
 {
     public partial class VemtaNuevo : Form
     {
-        public VemtaNuevo(string usuario)
+        public VemtaNuevo()
         {
             InitializeComponent();
         }
         clsDatosVenta v = new clsDatosVenta();
         private void VemtaNuevo_Load(object sender, EventArgs e)
         {
-            MessageBox.Show();
             generaColumnas();
 
             txtBuscarProducto.AutoCompleteCustomSource = cargarDatos();
@@ -29,6 +28,9 @@ namespace ProyectoMovistar
             txtBuscarProducto.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
             lblFolio.Text = v.folio().ToString();
+
+            VentaList.Focus();
+            VentaList.FullRowSelect = true;
         }
         List<String> productos = new List<string>();
         private AutoCompleteStringCollection cargarDatos()
@@ -61,12 +63,12 @@ namespace ProyectoMovistar
 
         }
 
-        int cont = 0;
         int to;
         double total;
-        List<clsVenta> listaVenta = new List<clsVenta>();
+        List<clsDVenta> listaVenta = new List<clsDVenta>();
         private void button3_Click(object sender, EventArgs e)
         {
+            clsDatosInventario inventarioo = new clsDatosInventario();
             //cont = 0;
             string varProducto = txtBuscarProducto.Text;
             int varPrecio = v.getPrecio(txtBuscarProducto.Text);
@@ -85,13 +87,13 @@ namespace ProyectoMovistar
             elementoListView = new ListViewItem(elementosFila);
             VentaList.Items.Add(elementoListView);
 
-            clsVenta ven = new clsVenta();
-            //ven.Folio = Convert.ToInt32(lblFolio.Text);
-            //ven.IdUusario = ;
-            //ven.Precio = varPrecio;
-            //ven.Cantidad = varCantidad;
-            //ven.Total = total;
-            //listaVenta.Add(ven);
+            clsDVenta ven = new clsDVenta();
+            ven.Folio = Convert.ToInt32(lblFolio.Text);
+            ven.Nombre = varProducto;
+            ven.Precio = varPrecio;
+            ven.Cantidad = varCantidad;
+            ven.Total = total;
+            listaVenta.Add(ven);
 
             to = to + Convert.ToInt32(total);
             txtTotal.Text = Convert.ToString(to);
@@ -108,10 +110,7 @@ namespace ProyectoMovistar
                 }
                 else {
                     txtCambio.Text = Convert.ToString(Convert.ToInt32(txtRecibi.Text) - to);
-                    foreach (clsVenta item in listaVenta)
-                    {
-                        MessageBox.Show(Convert.ToString(item.Folio));
-                    }
+                    
                 }
             }
 
@@ -128,31 +127,30 @@ namespace ProyectoMovistar
                 // Llenado de los campos del formulario para guardarlos en la Base de Datos
                 //try
                 //{
+                clsDatosInventario inventarioo = new clsDatosInventario();
                 clsDatosVenta objDao = new clsDatosVenta();
                 clsVenta objSolicitud = new clsVenta();
                 clsDVenta objDVenta = new clsDVenta();
-                //objDVenta.Folio =Convert.ToInt32(lblFolio.Text);
-                //objDVenta.IdUusario = 1;
-                //objDVenta.Fecha = dtpFecha.Text;
-                //objDVenta.Recibo = Convert.ToInt32(txtRecibi.Text);
-                //objDVenta.Cambio = Convert.ToDouble(txtCambio.Text);
-
-                //foreach (clsVenta item in listaVenta)
-                //{
-                //    objDVenta.Folio = item.Folio;
-                //    objDVenta.Nombre = item.Nombre;
-                //    objDVenta.Precio = item.Precio;
-                //    objSolicitud.Cantidad = item.Cantidad;
-                //    objSolicitud.Total = item.Total;
-                //    objDao.AgregarDVenta(objDVenta);
-                    
-                //}
-
+                objSolicitud.Folio = Convert.ToInt32(lblFolio.Text);
+                objSolicitud.IdUusario = inventarioo.getIdEmpleado("Ramon Perez");
+                objSolicitud.Fecha = dtpFecha.Text;
+                objSolicitud.Recibo = Convert.ToInt32(txtRecibi.Text);
+                objSolicitud.Cambio = Convert.ToDouble(txtCambio.Text);
                 objDao.AgregarProducto(objSolicitud);
+                foreach (clsDVenta item in listaVenta)
+                {
+                    objDVenta.Folio = Convert.ToInt32(lblFolio.Text);
+                    objDVenta.Nombre = item.Nombre;
+                    objDVenta.Precio = item.Precio;
+                    objDVenta.Cantidad = item.Cantidad;
+                    objDVenta.Total = item.Total;
+                   
+                    objDao.AgregarDVenta(objDVenta);
 
+                }
 
+               
 
-                // Muestra mensaje de satisfaccion
                 MessageBox.Show("Venta Realizada con Exito", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -175,8 +173,6 @@ namespace ProyectoMovistar
             {
                 VentaList.Clear();
                 txtTotal.Text = "";
-                cont = 0;
-
             }
 
 

@@ -62,7 +62,7 @@ namespace ProyectoMovistar
             objProducto.Proovedor = txtProovedor.Text;
             objProducto.Existencia = Convert.ToInt32(txtExistencia.Text);
             objProducto.Descripcion = txtDescripcion.Text;
-            objProducto.Idusuario = objDatosInventario.getIdEmpleado("Juan Jose Guzman Cisneros");
+            objProducto.Idusuario = objDatosInventario.getIdEmpleado("Ramon Perez");
             objProducto.RutaImg = rutaFinal;
             // INSERTA AL PRODUCTO MEDIANTE EL MÉTODO
             objDatosInventario.AgregarProducto(objProducto);
@@ -119,7 +119,7 @@ namespace ProyectoMovistar
             objProducto.Proovedor = txtProovedor.Text;
             objProducto.Existencia = Convert.ToInt32(txtExistencia.Text);
             objProducto.Descripcion = txtDescripcion.Text;
-            objProducto.Idusuario = objDatosInventario.getIdEmpleado("Juan Jose Guzman Cisneros");
+            objProducto.Idusuario = objDatosInventario.getIdEmpleado("Ramon Perez");
             objProducto.RutaImg = rutaFinal;
             // MUESTRA MENSAJE DE CONFIRMACION
             objDatosInventario.ModificarProducto(objProducto);
