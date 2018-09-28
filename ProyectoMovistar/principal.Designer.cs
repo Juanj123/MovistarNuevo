@@ -81,9 +81,9 @@
             // 
             this.pnlPrincipa.Controls.Add(this.pictureBox1);
             this.pnlPrincipa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPrincipa.Location = new System.Drawing.Point(200, 32);
+            this.pnlPrincipa.Location = new System.Drawing.Point(200, 26);
             this.pnlPrincipa.Name = "pnlPrincipa";
-            this.pnlPrincipa.Size = new System.Drawing.Size(822, 618);
+            this.pnlPrincipa.Size = new System.Drawing.Size(822, 624);
             this.pnlPrincipa.TabIndex = 2;
             this.pnlPrincipa.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPrincipa_Paint);
             // 
@@ -91,7 +91,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(177, 183);
+            this.pictureBox1.Location = new System.Drawing.Point(177, 186);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(483, 174);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -108,7 +108,7 @@
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(200, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(822, 32);
+            this.pnlTitulo.Size = new System.Drawing.Size(822, 26);
             this.pnlTitulo.TabIndex = 1;
             this.pnlTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTitulo_Paint);
             this.pnlTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseMove);

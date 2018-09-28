@@ -152,6 +152,7 @@
             this.VentaList.Size = new System.Drawing.Size(744, 183);
             this.VentaList.TabIndex = 4;
             this.VentaList.UseCompatibleStateImageBehavior = false;
+            this.VentaList.SelectedIndexChanged += new System.EventHandler(this.VentaList_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -337,7 +338,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtBuscarProducto;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListView VentaList;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -354,5 +354,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Button button4;
+        public System.Windows.Forms.ListView VentaList;
     }
 }
