@@ -38,6 +38,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsConexion.cs" />
+    <Compile Include="clsCrearTicket.cs" />
     <Compile Include="clsDatosInventario.cs" />
     <Compile Include="clsDatosLogin.cs" />
     <Compile Include="clsDatosReporteVentas.cs" />
@@ -55,11 +57,16 @@
     <Compile Include="clsDatosVenta.cs" />
     <Compile Include="clsValidaciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RawPrinterHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\capaPojos\capaPojos.csproj">
       <Project>{34cca0e7-ee2c-4777-a503-6aa5f475f72a}</Project>
       <Name>capaPojos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ticket\Ticket.csproj">
+      <Project>{d4b85a45-5163-4cc2-b690-d8d95d1cb916}</Project>
+      <Name>Ticket</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

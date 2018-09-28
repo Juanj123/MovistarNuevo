@@ -143,6 +143,7 @@ namespace ProyectoMovistar
             else
             {
                 
+
                 clsDatosInventario inventarioo = new clsDatosInventario();
                 clsDatosVenta objDao = new clsDatosVenta();
                 clsVenta objSolicitud = new clsVenta();
@@ -153,9 +154,9 @@ namespace ProyectoMovistar
                 objSolicitud.Recibo = Convert.ToInt32(txtRecibi.Text);
                 objSolicitud.Cambio = Convert.ToDouble(txtCambio.Text);
                 objDao.AgregarProducto(objSolicitud);
-               
                 for (int i = 0; i < VentaList.Items.Count; i++)
                 {
+
                     objDVenta.Folio = Convert.ToInt32(lblFolio.Text);
                     objDVenta.Nombre = VentaList.Items[i].SubItems[0].Text;
                     objDVenta.Precio=Convert.ToInt32( VentaList.Items[i].SubItems[2].Text);
@@ -164,16 +165,70 @@ namespace ProyectoMovistar
                     objDao.AgregarDVenta(objDVenta);
                 }
                 MessageBox.Show("Venta Realizada con Exito", "Venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                imprimir();
                 VentaList.Clear();
                 txtRecibi.Text = "";
                 txtTotal.Text = "";
                 txtCambio.Text = "";
                 lblFolio.Text = v.folio().ToString();
+
+                
             }
         }
 
+        private void imprimir()
+        {
+            clsCrearTicket ticket = new clsCrearTicket();
+            //ticket.AbreCajon();
 
-            private void button4_Click(object sender, EventArgs e)
+            //Datos de la cabezera del Ticket
+            ticket.Textocentro("Yuriria Cell");
+            ticket.Textocentro("Reparacion y venta de articulos");
+            ticket.TextoIzquierda("");
+            ticket.TextoIzquierda("Av. Algun lugar de yuriria");
+            ticket.TextoIzquierda("Zona Centro,38980 Yuriria,Gto.");
+            ticket.lineasAsteriscos();
+
+            //Sub cabecera
+            ticket.textoExtremos("FECHA " + DateTime.Now.ToShortDateString(), "HORA" + DateTime.Now.ToShortTimeString());
+            ticket.lineasAsteriscos();
+
+            //Articulos a vender
+            ticket.Ecabezado();
+            ticket.lineasAsteriscos();
+            //foreach (DataGridViewRow fila in dtgV.Rows)
+            //{
+            //    ticket.AgregarArticulo(decimal.Parse(fila.Cells[1].Value.ToString()), fila.Cells[0].Value.ToString(),
+            //        decimal.Parse(fila.Cells[2].Value.ToString()), decimal.Parse(fila.Cells[3].Value.ToString()));
+            //}
+
+            for (int i = 0; i < VentaList.Items.Count; i++)
+            {
+                ticket.AgregarArticulo(Convert.ToDecimal(VentaList.Items[i].SubItems[1].Text), VentaList.Items[i].SubItems[0].Text,Convert.ToDecimal( VentaList.Items[i].SubItems[2].Text), Convert.ToDecimal(VentaList.Items[i].SubItems[3].Text));
+            }
+
+            //Resumen de la Veta
+
+            ticket.lineasIgual();
+            ticket.AgregarTotales("TOTAL......$", decimal.Parse(txtTotal.Text));
+
+            //Texto final
+            ticket.TextoIzquierda("");
+            ticket.Textocentro("Servicio a domicilio");
+            ticket.Textocentro("445 103 80 48");
+            ticket.TextoIzquierda("");
+            ticket.Textocentro("!GRACIAS POR SU COMPRA!");
+            ticket.TextoIzquierda("");
+            ticket.Textocentro("VUELVA PRONTO");
+
+            //Descomentas esto 
+            ticket.cortaTicket();
+
+            //aqui es donde pones el nombre de la impresora 
+            ticket.ImprimirTicket("");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
             {
 
             int valor = Convert.ToInt32(VentaList.SelectedItems[0].SubItems[3].Text);
