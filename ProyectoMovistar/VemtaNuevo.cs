@@ -198,12 +198,7 @@ namespace ProyectoMovistar
             //Articulos a vender
             ticket.Ecabezado();
             ticket.lineasAsteriscos();
-            //foreach (DataGridViewRow fila in dtgV.Rows)
-            //{
-            //    ticket.AgregarArticulo(decimal.Parse(fila.Cells[1].Value.ToString()), fila.Cells[0].Value.ToString(),
-            //        decimal.Parse(fila.Cells[2].Value.ToString()), decimal.Parse(fila.Cells[3].Value.ToString()));
-            //}
-
+        
             for (int i = 0; i < VentaList.Items.Count; i++)
             {
                 ticket.AgregarArticulo(Convert.ToDecimal(VentaList.Items[i].SubItems[1].Text), VentaList.Items[i].SubItems[0].Text,Convert.ToDecimal( VentaList.Items[i].SubItems[2].Text), Convert.ToDecimal(VentaList.Items[i].SubItems[3].Text));
