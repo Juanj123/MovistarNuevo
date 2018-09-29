@@ -172,12 +172,13 @@ namespace ProyectoMovistar
                 txtCambio.Text = "";
                 lblFolio.Text = v.folio().ToString();
 
-                
+                generaColumnas();
             }
         }
 
         private void imprimir()
         {
+            int ca=0;
             clsCrearTicket ticket = new clsCrearTicket();
             //ticket.AbreCajon();
 
@@ -190,7 +191,8 @@ namespace ProyectoMovistar
             ticket.lineasAsteriscos();
 
             //Sub cabecera
-            ticket.textoExtremos("FECHA " + DateTime.Now.ToShortDateString(), "HORA" + DateTime.Now.ToShortTimeString());
+            ticket.textoExtremos("FECHA " + DateTime.Now.ToShortDateString(), "HORA" +"   "+ DateTime.Now.ToShortTimeString());
+            ticket.textoExtremos("Lo Atendio: " + lblatendio.Text, "Numero Ticket:"+" "+ "AC0" + lblFolio.Text);
             ticket.lineasAsteriscos();
 
             //Articulos a vender
@@ -205,12 +207,18 @@ namespace ProyectoMovistar
             for (int i = 0; i < VentaList.Items.Count; i++)
             {
                 ticket.AgregarArticulo(Convert.ToDecimal(VentaList.Items[i].SubItems[1].Text), VentaList.Items[i].SubItems[0].Text,Convert.ToDecimal( VentaList.Items[i].SubItems[2].Text), Convert.ToDecimal(VentaList.Items[i].SubItems[3].Text));
+                ca = ca + Convert.ToInt32(VentaList.Items[i].SubItems[1].Text);
+
+                v.RestarExistencia(VentaList.Items[i].SubItems[0].Text, Convert.ToInt32(VentaList.Items[i].SubItems[1].Text));
             }
 
             //Resumen de la Veta
 
             ticket.lineasIgual();
+            ticket.TextoIzquierda("Articulos Vendidos" + "  " + ca);
             ticket.AgregarTotales("TOTAL......$", decimal.Parse(txtTotal.Text));
+            ticket.AgregarTotales("RECIBO......$", decimal.Parse(txtRecibi.Text));
+            ticket.AgregarTotales("CAMBIO......$", decimal.Parse(txtCambio.Text));
 
             //Texto final
             ticket.TextoIzquierda("");
@@ -223,7 +231,7 @@ namespace ProyectoMovistar
 
             //Descomentas esto 
             ticket.cortaTicket();
-
+            
             //aqui es donde pones el nombre de la impresora 
             ticket.ImprimirTicket("");
         }

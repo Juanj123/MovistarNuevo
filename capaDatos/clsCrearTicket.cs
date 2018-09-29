@@ -44,7 +44,7 @@ namespace capaDatos
         }
         public void Ecabezado()
         {
-            linea.AppendLine("Producto        |  Cant | Precio|  Total");
+            linea.AppendLine("Producto      |  Cant | Precio  |  Total");
         }
         public void TextoIzquierda(string texto)
         {
@@ -193,15 +193,15 @@ namespace capaDatos
                     espacios = "";
                     for (int i = 0; i < nroEspacios; i++)
                     {
-                        espacios += " ";
+                        espacios += "  ";
                     }
-                    elemento += espacios + cant.ToString() + "Kg x ";
+                    elemento += espacios + cant.ToString() + " x ";
 
                     nroEspacios = (5 - precio.ToString().Length);
                     espacios = "";
                     for (int i = 0; i < nroEspacios; i++)
                     {
-                        espacios += " ";
+                        espacios += "  ";
                     }
                     elemento += espacios + "$" + precio.ToString();
 

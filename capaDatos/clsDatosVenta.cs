@@ -179,5 +179,23 @@ namespace capaDatos
             cone.cerrar();
             return numero;
         }
+
+        public void RestarExistencia(string nombre, int cantidad)
+        {
+            string sql;
+            MySqlCommand cm;
+            cone.conectar();
+            cm = new MySqlCommand();
+            cm.Parameters.AddWithValue("@nombre", nombre);
+            cm.Parameters.AddWithValue("@cantidad", cantidad);
+
+            sql = "UPDATE inventario SET nombre = @nombre, existencia = existencia - @cantidad   WHERE nombre = @nombre";
+
+            cm.CommandText = sql;
+            cm.CommandType = CommandType.Text;
+            cm.Connection = cone.cn;
+            cm.ExecuteNonQuery();
+            cone.cerrar();
+        }
     }
 }

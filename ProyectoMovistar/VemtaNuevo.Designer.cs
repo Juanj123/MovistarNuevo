@@ -47,7 +47,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblFolio = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblatendio = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -269,15 +269,15 @@
             this.lblFolio.Size = new System.Drawing.Size(0, 13);
             this.lblFolio.TabIndex = 15;
             // 
-            // label8
+            // lblatendio
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(110, 44);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(351, 17);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Aqui va el nombre de el(la) bro que esta atendiendo";
+            this.lblatendio.AutoSize = true;
+            this.lblatendio.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblatendio.Location = new System.Drawing.Point(110, 44);
+            this.lblatendio.Name = "lblatendio";
+            this.lblatendio.Size = new System.Drawing.Size(51, 17);
+            this.lblatendio.TabIndex = 16;
+            this.lblatendio.Text = "Juanjo";
             // 
             // dtpFecha
             // 
@@ -313,7 +313,7 @@
             this.ClientSize = new System.Drawing.Size(800, 458);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.dtpFecha);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblatendio);
             this.Controls.Add(this.lblFolio);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtTotal);
@@ -356,7 +356,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label lblFolio;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblatendio;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Button button4;
         public System.Windows.Forms.ListView VentaList;
