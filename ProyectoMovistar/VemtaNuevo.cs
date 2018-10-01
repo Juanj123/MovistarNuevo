@@ -18,9 +18,20 @@ namespace ProyectoMovistar
         {
             InitializeComponent();
         }
+
+        public VemtaNuevo(String usuario)
+        {
+            InitializeComponent();
+            lblatendio.Text = usuario;
+        }
+        static string usuario;
         clsDatosVenta v = new clsDatosVenta();
         private void VemtaNuevo_Load(object sender, EventArgs e)
         {
+            principal Form2 = new principal();
+            lblatendio= Form2.lbUsuario;
+    
+            MessageBox.Show(usuario);
             generaColumnas();
 
             txtBuscarProducto.AutoCompleteCustomSource = cargarDatos();
@@ -201,7 +212,7 @@ namespace ProyectoMovistar
         
             for (int i = 0; i < VentaList.Items.Count; i++)
             {
-                ticket.AgregarArticulo(Convert.ToDecimal(VentaList.Items[i].SubItems[1].Text), VentaList.Items[i].SubItems[0].Text,Convert.ToDecimal( VentaList.Items[i].SubItems[2].Text), Convert.ToDecimal(VentaList.Items[i].SubItems[3].Text));
+                ticket.AgregarArticulo(Convert.ToDecimal(VentaList.Items[i].SubItems[1].Text),"      ", VentaList.Items[i].SubItems[0].Text,"       ", Convert.ToDecimal( VentaList.Items[i].SubItems[2].Text),"       ", Convert.ToDecimal(VentaList.Items[i].SubItems[3].Text));
                 ca = ca + Convert.ToInt32(VentaList.Items[i].SubItems[1].Text);
 
                 v.RestarExistencia(VentaList.Items[i].SubItems[0].Text, Convert.ToInt32(VentaList.Items[i].SubItems[1].Text));
@@ -233,19 +244,26 @@ namespace ProyectoMovistar
 
         private void button4_Click(object sender, EventArgs e)
             {
+            try {
+                int valor = Convert.ToInt32(VentaList.SelectedItems[0].SubItems[3].Text);
 
-            int valor = Convert.ToInt32(VentaList.SelectedItems[0].SubItems[3].Text);
+                //MessageBox.Show((Convert.ToString(valor)));
+                foreach (ListViewItem lista in VentaList.SelectedItems)
+                {
 
-            //MessageBox.Show((Convert.ToString(valor)));
-            foreach (ListViewItem lista in VentaList.SelectedItems)
-            {
+                    to = to - valor;
+                    txtTotal.Text = Convert.ToString(to);
+                    VentaList.Items.Remove(lista);
 
-                to = to - valor;
-                txtTotal.Text = Convert.ToString(to);
-                VentaList.Items.Remove(lista);
 
+                }
 
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Seleccione una fila de la tabla", "Error al borrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+           
 
 
 

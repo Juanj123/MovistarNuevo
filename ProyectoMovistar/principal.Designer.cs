@@ -227,9 +227,8 @@
             this.lbUsuario.ForeColor = System.Drawing.Color.White;
             this.lbUsuario.Location = new System.Drawing.Point(52, 162);
             this.lbUsuario.Name = "lbUsuario";
-            this.lbUsuario.Size = new System.Drawing.Size(45, 17);
+            this.lbUsuario.Size = new System.Drawing.Size(0, 17);
             this.lbUsuario.TabIndex = 6;
-            this.lbUsuario.Text = "label1";
             this.lbUsuario.Click += new System.EventHandler(this.lbUsuario_Click);
             // 
             // lbTipo

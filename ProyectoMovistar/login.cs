@@ -123,6 +123,9 @@ namespace ProyectoMovistar
                             frmPrincipal.Show();
                             frmPrincipal.lbTipo.Text = cbTipo.SelectedItem.ToString() + ":";
                             frmPrincipal.lbUsuario.Text = txtUsuario.Text;
+                            VemtaNuevo obj = new VemtaNuevo(txtUsuario.Text);
+                           
+
                         }
                         //else if (dr.Read() == true & cbTipo.SelectedItem.Equals("Empleado"))
                         //{

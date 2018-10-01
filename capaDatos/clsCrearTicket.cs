@@ -179,7 +179,7 @@ namespace capaDatos
             linea.AppendLine(textoCompleto);
         }
 
-        public void AgregarArticulo(decimal cant, string nombre, decimal precio, decimal total)
+        public void AgregarArticulo(decimal cant, string espacios1, string nombre, string espacios2, decimal precio, string espacios3, decimal total)
         {
             if (cant.ToString().Length <= 4 && precio.ToString().Length <= 6 && total.ToString().Length <= 7)
             {
@@ -187,10 +187,10 @@ namespace capaDatos
                 bool bandera = false;
                 int nroEspacios = 0;
 
-                if (nombre.Length > 15)
+                if (nombre.Length > 16)
                 {
-                    nroEspacios = (3 - cant.ToString().Length);
-                    espacios = "";
+                    nroEspacios = (4 - cant.ToString().Length);
+                    espacios = "  ";
                     for (int i = 0; i < nroEspacios; i++)
                     {
                         espacios += "  ";
@@ -198,10 +198,10 @@ namespace capaDatos
                     elemento += espacios + cant.ToString() + " x ";
 
                     nroEspacios = (5 - precio.ToString().Length);
-                    espacios = "";
+                    espacios = "   ";
                     for (int i = 0; i < nroEspacios; i++)
                     {
-                        espacios += "  ";
+                        espacios += "   ";
                     }
                     elemento += espacios + "$" + precio.ToString();
 
@@ -209,9 +209,9 @@ namespace capaDatos
                     espacios = "";
                     for (int i = 0; i < nroEspacios; i++)
                     {
-                        espacios += " ";
+                        espacios += "  ";
                     }
-                    elemento += espacios + "$" + total.ToString();
+                    elemento += espacios + "     $" + total.ToString();
 
                     int caracterActual = 0;
                     for (int longT = nombre.Length; longT > 12; longT -= 12)
@@ -233,7 +233,7 @@ namespace capaDatos
                 {
                     for (int i = 0; i < (12 - nombre.Length); i++)
                     {
-                        espacios += " ";
+                        espacios += "  ";
                     }
                     elemento = nombre + espacios;
 
@@ -241,7 +241,7 @@ namespace capaDatos
                     espacios = "";
                     for (int i = 0; i < nroEspacios; i++)
                     {
-                        espacios += " ";
+                        espacios += "    ";
                     }
                     elemento += espacios + cant.ToString() ;
 
@@ -249,15 +249,15 @@ namespace capaDatos
                     espacios = "";
                     for (int i = 0; i < nroEspacios; i++)
                     {
-                        espacios += " ";
+                        espacios += "  ";
                     }
                     elemento += espacios + "$" + precio.ToString();
 
                     nroEspacios = (6 - precio.ToString().Length);
-                    espacios = "";
+                    espacios = "  ";
                     for (int i = 0; i < nroEspacios; i++)
                     {
-                        espacios += " ";
+                        espacios += "  ";
                     }
                     elemento += espacios + "$" + total.ToString();
 

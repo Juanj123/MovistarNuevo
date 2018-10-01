@@ -275,6 +275,7 @@
             this.lblatendio.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblatendio.Location = new System.Drawing.Point(110, 44);
             this.lblatendio.Name = "lblatendio";
+            this.lblatendio.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblatendio.Size = new System.Drawing.Size(51, 17);
             this.lblatendio.TabIndex = 16;
             this.lblatendio.Text = "Juanjo";
@@ -327,7 +328,9 @@
             this.Controls.Add(this.VentaList);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "VemtaNuevo";
+            this.RightToLeftLayout = true;
             this.Text = "VemtaNuevo";
             this.Load += new System.EventHandler(this.VemtaNuevo_Load);
             this.groupBox1.ResumeLayout(false);
@@ -356,9 +359,9 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label lblFolio;
-        private System.Windows.Forms.Label lblatendio;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Button button4;
         public System.Windows.Forms.ListView VentaList;
+        public System.Windows.Forms.Label lblatendio;
     }
 }
