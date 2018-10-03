@@ -13,7 +13,7 @@ namespace capaPojos
         string nombre;
         string rutaImg;
         double precio;
-        string categoria;
+        int categoria;
         int existencia;
         string descripcion;
 
@@ -22,7 +22,7 @@ namespace capaPojos
         public string Nombre { get => nombre; set => nombre = value; }
         public string RutaImg { get => rutaImg; set => rutaImg = value; }
         public double Precio { get => precio; set => precio = value; }
-        public string Categoria { get => categoria; set => categoria = value; }
+        public int Categoria { get => categoria; set => categoria = value; }
         public int Existencia { get => existencia; set => existencia = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
     }

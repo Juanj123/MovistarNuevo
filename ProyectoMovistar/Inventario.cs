@@ -59,7 +59,7 @@ namespace ProyectoMovistar
             objProducto.Clave = txtClave.Text;
             objProducto.Nombre = txtNombre.Text;
             objProducto.Precio = Convert.ToInt32(txtPrecio.Text);
-            objProducto.Categoria = cmbCategoria.Text;
+            objProducto.Categoria = objDatosInventario.getIdCategoria(cmbCategoria.Text);
             objProducto.Existencia = Convert.ToInt32(txtExistencia.Text);
             objProducto.Descripcion = txtDescripcion.Text;
             objProducto.Idusuario = objDatosInventario.getIdEmpleado("Ramon Perez");
@@ -116,7 +116,7 @@ namespace ProyectoMovistar
             objProducto.Clave = txtClave.Text;
             objProducto.Nombre = txtNombre.Text;
             objProducto.Precio = Convert.ToInt32(txtPrecio.Text);
-            objProducto.Categoria = cmbCategoria.Text;
+            objProducto.Categoria = objDatosInventario.getIdCategoria(cmbCategoria.Text);
             objProducto.Existencia = Convert.ToInt32(txtExistencia.Text);
             objProducto.Descripcion = txtDescripcion.Text;
             objProducto.Idusuario = objDatosInventario.getIdEmpleado("Ramon Perez");
@@ -176,7 +176,7 @@ namespace ProyectoMovistar
                 txtClave.Text = objinv.Clave;
                 txtNombre.Text = objinv.Nombre;
                 txtPrecio.Text = Convert.ToString(objinv.Precio);
-                cmbCategoria.Text = objinv.Categoria;
+                cmbCategoria.Text = objdatos.getnombreCategoria(objinv.Categoria);
                 txtExistencia.Text = Convert.ToString(objinv.Existencia);
                 txtDescripcion.Text = objinv.Descripcion;
                 pbProducto.ImageLocation = objinv.RutaImg;

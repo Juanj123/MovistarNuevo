@@ -114,7 +114,7 @@ namespace capaDatos
                 cli.Idusuario = Convert.ToInt32(midataReader["idUsuario"].ToString());
                 cli.RutaImg = midataReader["imgProducto"].ToString();
                 cli.Nombre = midataReader["nombre"].ToString();
-                cli.Categoria = midataReader["proveedor"].ToString();
+                cli.Categoria = Convert.ToInt32(midataReader["Categoria"].ToString());
                 cli.Precio = Convert.ToDouble(midataReader["precio"].ToString());
                 cli.Existencia = Convert.ToInt32(midataReader["existencia"].ToString());
                 cli.Descripcion = midataReader["descripcion"].ToString();
@@ -272,6 +272,50 @@ namespace capaDatos
             }
             cone.cerrar();
             return lstUsuarios;
+        }
+        public int getIdCategoria(string nombre)
+        {
+            cone.conectar();
+            int numeroId = 0;
+            List<clsCategorias> lstUsuarios = new List<clsCategorias>();
+            string sql;
+            MySqlCommand cm = new MySqlCommand();
+            MySqlDataReader dr;
+            sql = "select idCategoria from categoria where nombre = '" + nombre + "';";
+            cm.CommandText = sql;
+            cm.CommandType = CommandType.Text;
+            cm.Connection = cone.cn;
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                clsCategorias objAl = new clsCategorias();
+                numeroId = Convert.ToInt32(dr.GetString("idCategoria"));
+
+            }
+            cone.cerrar();
+            return numeroId;
+        }
+        public string getnombreCategoria(int id)
+        {
+            cone.conectar();
+            string numeroId = "";
+            List<clsCategorias> lstUsuarios = new List<clsCategorias>();
+            string sql;
+            MySqlCommand cm = new MySqlCommand();
+            MySqlDataReader dr;
+            sql = "select nombre from categoria where idCategoria = '" + id + "';";
+            cm.CommandText = sql;
+            cm.CommandType = CommandType.Text;
+            cm.Connection = cone.cn;
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                clsCategorias objAl = new clsCategorias();
+                numeroId = dr.GetString("nombre");
+
+            }
+            cone.cerrar();
+            return numeroId;
         }
     }
 }
