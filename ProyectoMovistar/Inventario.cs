@@ -59,7 +59,7 @@ namespace ProyectoMovistar
             objProducto.Clave = txtClave.Text;
             objProducto.Nombre = txtNombre.Text;
             objProducto.Precio = Convert.ToInt32(txtPrecio.Text);
-            objProducto.Proovedor = txtProovedor.Text;
+            objProducto.Categoria = cmbCategoria.Text;
             objProducto.Existencia = Convert.ToInt32(txtExistencia.Text);
             objProducto.Descripcion = txtDescripcion.Text;
             objProducto.Idusuario = objDatosInventario.getIdEmpleado("Ramon Perez");
@@ -88,7 +88,7 @@ namespace ProyectoMovistar
 
             txtClave.Text = "";
             txtNombre.Text = "";
-            txtProovedor.Text = "";
+            cmbCategoria.Text = "";
             txtPrecio.Text = "";
             txtExistencia.Text = "";
             txtDescripcion.Text = "";
@@ -116,7 +116,7 @@ namespace ProyectoMovistar
             objProducto.Clave = txtClave.Text;
             objProducto.Nombre = txtNombre.Text;
             objProducto.Precio = Convert.ToInt32(txtPrecio.Text);
-            objProducto.Proovedor = txtProovedor.Text;
+            objProducto.Categoria = cmbCategoria.Text;
             objProducto.Existencia = Convert.ToInt32(txtExistencia.Text);
             objProducto.Descripcion = txtDescripcion.Text;
             objProducto.Idusuario = objDatosInventario.getIdEmpleado("Ramon Perez");
@@ -128,7 +128,7 @@ namespace ProyectoMovistar
             btnModificar.Visible = false;
             txtClave.Text = "";
             txtNombre.Text = "";
-            txtProovedor.Text = "";
+            cmbCategoria.Text = "";
             txtPrecio.Text = "";
             txtExistencia.Text = "";
             txtDescripcion.Text = "";
@@ -143,7 +143,7 @@ namespace ProyectoMovistar
                 btnModificar.Visible = false;
                 txtClave.Text = "";
                 txtNombre.Text = "";
-                txtProovedor.Text = "";
+                cmbCategoria.Text = "";
                 txtPrecio.Text = "";
                 txtExistencia.Text = "";
                 txtDescripcion.Text = "";
@@ -151,7 +151,7 @@ namespace ProyectoMovistar
             }
             txtClave.Text = "";
             txtNombre.Text = "";
-            txtProovedor.Text = "";
+            cmbCategoria.Text = "";
             txtPrecio.Text = "";
             txtExistencia.Text = "";
             txtDescripcion.Text = "";
@@ -176,7 +176,7 @@ namespace ProyectoMovistar
                 txtClave.Text = objinv.Clave;
                 txtNombre.Text = objinv.Nombre;
                 txtPrecio.Text = Convert.ToString(objinv.Precio);
-                txtProovedor.Text = objinv.Proovedor;
+                cmbCategoria.Text = objinv.Categoria;
                 txtExistencia.Text = Convert.ToString(objinv.Existencia);
                 txtDescripcion.Text = objinv.Descripcion;
                 pbProducto.ImageLocation = objinv.RutaImg;
@@ -203,6 +203,8 @@ namespace ProyectoMovistar
 
         private void Inventario_Load(object sender, EventArgs e)
         {
+            clsDatosInventario o = new clsDatosInventario();
+            var lista = o.listaCategorias();
             btnModificar.Visible = false;
             verProductos();
             dataGridView1.AllowUserToAddRows = false;
@@ -211,7 +213,10 @@ namespace ProyectoMovistar
 
             principal n = new principal();
             n.pasado += new principal.delegar(ejecutar);
-           
+            for (int i = 0; i < lista.Count; i++)
+            {
+                cmbCategoria.Items.Insert(i, lista[i].Nombre);
+            }
         }
 
         public void ejecutar(string dato) {
@@ -276,7 +281,7 @@ namespace ProyectoMovistar
             va.NumerosDoubles(e);
         }
 
-        private void txtProovedor_KeyPress(object sender, KeyPressEventArgs e)
+        private void cmbCategoria_KeyPress(object sender, KeyPressEventArgs e)
         {
             va.Letras(e);
         }
@@ -324,7 +329,7 @@ namespace ProyectoMovistar
 
         }
 
-        private void txtProovedor_TextChanged(object sender, EventArgs e)
+        private void cmbCategoria_TextChanged(object sender, EventArgs e)
         {
 
         }

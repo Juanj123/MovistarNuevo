@@ -22,13 +22,12 @@ namespace capaDatos
             cm.Parameters.AddWithValue("@idusuario", objProducto.Idusuario);
             cm.Parameters.AddWithValue("@imgProducto", objProducto.RutaImg);
             cm.Parameters.AddWithValue("@nombre", objProducto.Nombre);
-            cm.Parameters.AddWithValue("@proveedor", objProducto.Proovedor);
+            cm.Parameters.AddWithValue("@Categoria", objProducto.Categoria);
             cm.Parameters.AddWithValue("@precio", objProducto.Precio);
             cm.Parameters.AddWithValue("@existencia", objProducto.Existencia);
             cm.Parameters.AddWithValue("@descripcion", objProducto.Descripcion);
 
-            sql = "INSERT INTO inventario (clave, idusuario, imgProducto, nombre, proveedor, precio, existencia, descripcion) " +
-            "VALUES (@clave,@idusuario, @imgProducto, @nombre, @proveedor, @precio, @existencia, @descripcion)";
+            sql = "insert into inventario value(@clave,@idusuario,@Categoria,@imgProducto,@nombre,@precio,@existencia,@descripcion);";
             cm.CommandText = sql;
             cm.CommandType = CommandType.Text;
             cm.Connection = cone.cn;
@@ -86,14 +85,15 @@ namespace capaDatos
             cm.Parameters.AddWithValue("@idusuario", objProducto.Idusuario);
             cm.Parameters.AddWithValue("@imgProducto", objProducto.RutaImg);
             cm.Parameters.AddWithValue("@nombre", objProducto.Nombre);
-            cm.Parameters.AddWithValue("@proveedor", objProducto.Proovedor);
+            cm.Parameters.AddWithValue("@Categoria", objProducto.Categoria);
             cm.Parameters.AddWithValue("@precio", objProducto.Precio);
             cm.Parameters.AddWithValue("@existencia", objProducto.Existencia);
             cm.Parameters.AddWithValue("@descripcion", objProducto.Descripcion);
 
 
-            sql = "UPDATE inventario SET clave = @clave, idUsuario = @idusuario, imgProducto = @imgProducto, nombre = @nombre," +
-            "proveedor = @proveedor, precio = @precio, existencia = @existencia, descripcion = @descripcion  WHERE clave = @clave";
+            sql = "UPDATE inventario SET clave = @clave, idUsuario = @idusuario, idCategoria = @Categoria, imgProducto = @imgProducto," +
+                "nombre = @nombre, precio = @precio, existencia = @existencia, descripcion = @descripcion" +
+                "WHERE clave = @clave";
             cm.CommandText = sql;
             cm.CommandType = CommandType.Text;
             cm.Connection = cone.cn;
@@ -114,7 +114,7 @@ namespace capaDatos
                 cli.Idusuario = Convert.ToInt32(midataReader["idUsuario"].ToString());
                 cli.RutaImg = midataReader["imgProducto"].ToString();
                 cli.Nombre = midataReader["nombre"].ToString();
-                cli.Proovedor = midataReader["proveedor"].ToString();
+                cli.Categoria = midataReader["proveedor"].ToString();
                 cli.Precio = Convert.ToDouble(midataReader["precio"].ToString());
                 cli.Existencia = Convert.ToInt32(midataReader["existencia"].ToString());
                 cli.Descripcion = midataReader["descripcion"].ToString();
@@ -231,6 +231,47 @@ namespace capaDatos
 
             cone.cerrar();
             return lstProductos;
+        }
+        public void AgregarDVenta(clsDVenta objProducto)
+        {
+            string sql;
+            MySqlCommand cm;
+            cone.conectar();
+            cm = new MySqlCommand();
+            cm.Parameters.AddWithValue("@folio", objProducto.Folio);
+            cm.Parameters.AddWithValue("@nombreProduct", objProducto.Nombre);
+            cm.Parameters.AddWithValue("@precioProduct", objProducto.Precio);
+            cm.Parameters.AddWithValue("@cantidadProduct", objProducto.Cantidad);
+            cm.Parameters.AddWithValue("@total", objProducto.Total);
+
+            sql = "insert  into dventas value(@folio,@nombreProduct,@precioProduct,@cantidadProduct, @total);";
+            cm.CommandText = sql;
+            cm.CommandType = CommandType.Text;
+            cm.Connection = cone.cn;
+            cm.ExecuteNonQuery();
+            cone.cerrar();
+        }
+
+        public List<clsCategorias> listaCategorias()
+        {
+            cone.conectar();
+            List<clsCategorias> lstUsuarios = new List<clsCategorias>();
+            string sql;
+            MySqlCommand cm = new MySqlCommand();
+            MySqlDataReader dr;
+            sql = "select nombre from categoria;";
+            cm.CommandText = sql;
+            cm.CommandType = CommandType.Text;
+            cm.Connection = cone.cn;
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                clsCategorias objAl = new clsCategorias();
+                objAl.Nombre = dr.GetString("nombre");
+                lstUsuarios.Add(objAl);
+            }
+            cone.cerrar();
+            return lstUsuarios;
         }
     }
 }
