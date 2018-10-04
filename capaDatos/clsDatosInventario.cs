@@ -19,15 +19,15 @@ namespace capaDatos
             cone.conectar();
             cm = new MySqlCommand();
             cm.Parameters.AddWithValue("@clave", objProducto.Clave);
-            cm.Parameters.AddWithValue("@idusuario", objProducto.Idusuario);
+            cm.Parameters.AddWithValue("@idUsuario", objProducto.Idusuario);
+            cm.Parameters.AddWithValue("@idCategoria", objProducto.Categoria);
             cm.Parameters.AddWithValue("@imgProducto", objProducto.RutaImg);
             cm.Parameters.AddWithValue("@nombre", objProducto.Nombre);
-            cm.Parameters.AddWithValue("@Categoria", objProducto.Categoria);
             cm.Parameters.AddWithValue("@precio", objProducto.Precio);
             cm.Parameters.AddWithValue("@existencia", objProducto.Existencia);
             cm.Parameters.AddWithValue("@descripcion", objProducto.Descripcion);
 
-            sql = "insert into inventario value(@clave,@idusuario,@Categoria,@imgProducto,@nombre,@precio,@existencia,@descripcion);";
+            sql = "insert into inventario value(@clave,@idUsuario,@idCategoria,@imgProducto,@nombre,@precio,@existencia,@descripcion);";
             cm.CommandText = sql;
             cm.CommandType = CommandType.Text;
             cm.Connection = cone.cn;
@@ -114,7 +114,7 @@ namespace capaDatos
                 cli.Idusuario = Convert.ToInt32(midataReader["idUsuario"].ToString());
                 cli.RutaImg = midataReader["imgProducto"].ToString();
                 cli.Nombre = midataReader["nombre"].ToString();
-                cli.Categoria = Convert.ToInt32(midataReader["Categoria"].ToString());
+                cli.Categoria = Convert.ToInt32(midataReader["idCategoria"].ToString());
                 cli.Precio = Convert.ToDouble(midataReader["precio"].ToString());
                 cli.Existencia = Convert.ToInt32(midataReader["existencia"].ToString());
                 cli.Descripcion = midataReader["descripcion"].ToString();
@@ -207,14 +207,15 @@ namespace capaDatos
             return lstProductos;
         }
 
-        public List<clsInventario> getDatosProductobytipo(string clave)
+        public List<clsInventario> getDatosProductobytipo(int clave)
         {
             List<clsInventario> lstProductos = new List<clsInventario>();
             string sql;
+            
             MySqlCommand cm = new MySqlCommand();
             MySqlDataReader dr;
             cone.conectar();
-            sql = "SELECT  clave, nombre, precio, existencia from inventario where clave like '" + clave + "%'";
+            sql = "SELECT  clave, nombre, precio, existencia from inventario where idCategoria like '" + clave + "%'";
             cm.CommandText = sql;
             cm.CommandType = CommandType.Text;
             cm.Connection = cone.cn;
@@ -316,6 +317,22 @@ namespace capaDatos
             }
             cone.cerrar();
             return numeroId;
+        }
+        public void AgregarCategoria(clsCategorias objCategoria)
+        {
+            string sql;
+            MySqlCommand cm;
+            cone.conectar();
+            cm = new MySqlCommand();
+            cm.Parameters.AddWithValue("@idCategoria", objCategoria.Id);
+            cm.Parameters.AddWithValue("@nombre", objCategoria.Nombre);
+       
+            sql = "insert  into categoria value(@idCategoria,@nombre);";
+            cm.CommandText = sql;
+            cm.CommandType = CommandType.Text;
+            cm.Connection = cone.cn;
+            cm.ExecuteNonQuery();
+            cone.cerrar();
         }
     }
 }

@@ -62,7 +62,7 @@ namespace ProyectoMovistar
             objProducto.Categoria = objDatosInventario.getIdCategoria(cmbCategoria.Text);
             objProducto.Existencia = Convert.ToInt32(txtExistencia.Text);
             objProducto.Descripcion = txtDescripcion.Text;
-            objProducto.Idusuario = objDatosInventario.getIdEmpleado("Ramon Perez");
+            objProducto.Idusuario = objDatosInventario.getIdEmpleado(Program.nombre);
             objProducto.RutaImg = rutaFinal;
             // INSERTA AL PRODUCTO MEDIANTE EL MÉTODO
             objDatosInventario.AgregarProducto(objProducto);
@@ -119,7 +119,7 @@ namespace ProyectoMovistar
             objProducto.Categoria = objDatosInventario.getIdCategoria(cmbCategoria.Text);
             objProducto.Existencia = Convert.ToInt32(txtExistencia.Text);
             objProducto.Descripcion = txtDescripcion.Text;
-            objProducto.Idusuario = objDatosInventario.getIdEmpleado("Ramon Perez");
+            objProducto.Idusuario = objDatosInventario.getIdEmpleado(Program.nombre);
             objProducto.RutaImg = rutaFinal;
             // MUESTRA MENSAJE DE CONFIRMACION
             objDatosInventario.ModificarProducto(objProducto);
@@ -203,6 +203,8 @@ namespace ProyectoMovistar
 
         private void Inventario_Load(object sender, EventArgs e)
         {
+            lblNuevaCategoria.Visible = false;
+            txtNuevaCategoria.Visible = false;
             clsDatosInventario o = new clsDatosInventario();
             var lista = o.listaCategorias();
             btnModificar.Visible = false;
@@ -211,18 +213,13 @@ namespace ProyectoMovistar
 
             rbnNombre.Checked = true;
 
-            principal n = new principal();
-            n.pasado += new principal.delegar(ejecutar);
             for (int i = 0; i < lista.Count; i++)
             {
                 cmbCategoria.Items.Insert(i, lista[i].Nombre);
             }
         }
 
-        public void ejecutar(string dato) {
-            MessageBox.Show(dato);
-        }
-
+       
         private void txtBuscar_KeyUp(object sender, KeyEventArgs e)
         {
             if (rbnClave.Checked == true)
@@ -250,7 +247,8 @@ namespace ProyectoMovistar
                     if (rbnTipo.Checked == true)
                     {
                         dataGridView1.Rows.Clear();
-                        tabla = consulta.getDatosProductobytipo(txtBuscar.Text);
+                        int id = consulta.getIdCategoria(txtBuscar.Text);
+                        tabla = consulta.getDatosProductobytipo(id);
                         foreach (clsInventario elemento in tabla)
                         {
                             dataGridView1.Rows.Add(elemento.Clave, elemento.Nombre, elemento.Precio, elemento.Existencia);
@@ -332,6 +330,58 @@ namespace ProyectoMovistar
         private void cmbCategoria_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            txtNuevaCategoria.Visible = true;
+            lblNuevaCategoria.Visible = true;
+        }
+
+        private void txtNuevaCategoria_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                clsCategorias obj = new clsCategorias();
+                clsDatosInventario obj2 = new clsDatosInventario();
+                obj.Nombre = txtNuevaCategoria.Text;
+                obj2.AgregarCategoria(obj);
+                MessageBox.Show("Se agrego categoria");
+                txtNuevaCategoria.Text = "";
+                txtNuevaCategoria.Visible = false;
+                lblNuevaCategoria.Visible = false;
+                cmbCategoria.Items.Clear();
+                clsDatosInventario o = new clsDatosInventario();
+                var lista = o.listaCategorias();
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    cmbCategoria.Items.Insert(i, lista[i].Nombre);
+                }
+            }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (rbnTipo.Checked == true)
+            {
+                dataGridView1.Rows.Clear();
+                int id = consulta.getIdCategoria(txtBuscar.Text);
+                tabla = consulta.getDatosProductobytipo(id);
+                foreach (clsInventario elemento in tabla)
+                {
+                    dataGridView1.Rows.Add(elemento.Clave, elemento.Nombre, elemento.Precio, elemento.Existencia);
+                }
+            }
         }
     }
 }

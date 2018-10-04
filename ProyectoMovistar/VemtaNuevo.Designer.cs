@@ -228,6 +228,7 @@
             this.txtRecibi.Name = "txtRecibi";
             this.txtRecibi.Size = new System.Drawing.Size(100, 23);
             this.txtRecibi.TabIndex = 10;
+            this.txtRecibi.TextChanged += new System.EventHandler(this.txtRecibi_TextChanged);
             this.txtRecibi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
             // txtCambio

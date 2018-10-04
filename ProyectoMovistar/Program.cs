@@ -10,7 +10,7 @@ namespace ProyectoMovistar
     {
         // privilegios
         public static String tipo;
-
+        public static String nombre;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -19,7 +19,7 @@ namespace ProyectoMovistar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Inventario());
+            Application.Run(new login());
         }
     }
 }

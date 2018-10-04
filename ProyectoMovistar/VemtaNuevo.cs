@@ -28,9 +28,9 @@ namespace ProyectoMovistar
         clsDatosVenta v = new clsDatosVenta();
         private void VemtaNuevo_Load(object sender, EventArgs e)
         {
-            principal Form2 = new principal();
-            lblatendio= Form2.lbUsuario;
-    
+           
+            lblatendio.Text = Program.nombre;
+
             MessageBox.Show(usuario);
             generaColumnas();
 
@@ -160,7 +160,7 @@ namespace ProyectoMovistar
                 clsVenta objSolicitud = new clsVenta();
                 clsDVenta objDVenta = new clsDVenta();
                 objSolicitud.Folio = Convert.ToInt32(lblFolio.Text);
-                objSolicitud.IdUusario = inventarioo.getIdEmpleado("Ramon Perez");
+                objSolicitud.IdUusario = inventarioo.getIdEmpleado(Program.nombre);
                 objSolicitud.Fecha = dtpFecha.Text;
                 objSolicitud.Recibo = Convert.ToInt32(txtRecibi.Text);
                 objSolicitud.Cambio = Convert.ToDouble(txtCambio.Text);
@@ -195,15 +195,15 @@ namespace ProyectoMovistar
 
             //Datos de la cabezera del Ticket
             ticket.Textocentro("Yuriria Cell");
-            ticket.Textocentro("Reparacion y venta de articulos");
+            ticket.Textocentro("Reparacion y Venta de articulos");
             ticket.TextoIzquierda("");
-            ticket.TextoIzquierda("Av. Algun lugar de yuriria");
+            ticket.TextoIzquierda("Av. Morelos # 13");
             ticket.TextoIzquierda("Zona Centro,38980 Yuriria,Gto.");
             ticket.lineasAsteriscos();
 
             //Sub cabecera
             ticket.textoExtremos("FECHA " + DateTime.Now.ToShortDateString(), "HORA" +"   "+ DateTime.Now.ToShortTimeString());
-            ticket.textoExtremos("Lo Atendio: " + lblatendio.Text, "Numero Ticket:"+" "+ "AC0" + lblFolio.Text);
+            ticket.textoExtremos("Lo atendio: " + lblatendio.Text, "Numero Ticket:"+" "+ "AC0" + lblFolio.Text);
             ticket.lineasAsteriscos();
 
             //Articulos a vender
@@ -223,13 +223,13 @@ namespace ProyectoMovistar
             ticket.lineasIgual();
             ticket.TextoIzquierda("Articulos Vendidos" + "  " + ca);
             ticket.AgregarTotales("TOTAL......$", decimal.Parse(txtTotal.Text));
-            ticket.AgregarTotales("RECIBO......$", decimal.Parse(txtRecibi.Text));
+            ticket.AgregarTotales("EFECTIVO......$", decimal.Parse(txtRecibi.Text));
             ticket.AgregarTotales("CAMBIO......$", decimal.Parse(txtCambio.Text));
 
             //Texto final
             ticket.TextoIzquierda("");
-            ticket.Textocentro("Servicio a domicilio");
-            ticket.Textocentro("445 103 80 48");
+            ticket.Textocentro("Telefono de atencion al cliente");
+            ticket.Textocentro("445 103 95 30");
             ticket.TextoIzquierda("");
             ticket.Textocentro("!GRACIAS POR SU COMPRA!");
             ticket.TextoIzquierda("");
@@ -277,6 +277,11 @@ namespace ProyectoMovistar
 
         private void VentaList_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+
+        private void txtRecibi_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
     }
