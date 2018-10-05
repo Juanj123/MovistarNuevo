@@ -65,10 +65,10 @@
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(126, 20);
+            this.txtCorreo.Location = new System.Drawing.Point(223, 20);
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(5);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(371, 23);
+            this.txtCorreo.Size = new System.Drawing.Size(291, 23);
             this.txtCorreo.TabIndex = 5;
             // 
             // label1
@@ -78,9 +78,9 @@
             this.label1.Location = new System.Drawing.Point(17, 23);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 17);
+            this.label1.Size = new System.Drawing.Size(196, 17);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Ingresa tu gmail:";
+            this.label1.Text = "Ingresa tu Correo Electronico:";
             // 
             // recuperarContrasenia
             // 

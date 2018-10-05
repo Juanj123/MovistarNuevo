@@ -332,9 +332,10 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VemtaNuevo";
             this.RightToLeftLayout = true;
-            this.Text = "VemtaNuevo";
+            this.Text = "Ventas";
             this.Load += new System.EventHandler(this.VemtaNuevo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

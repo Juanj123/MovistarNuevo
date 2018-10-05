@@ -137,7 +137,8 @@ namespace ProyectoMovistar
             if (e.KeyChar == (char)13) {
                 if (to > Convert.ToInt32(txtRecibi.Text))
                 {
-                    MessageBox.Show("No seas codo Bro, ese billetito no alcanza para pagar");
+                    MessageBox.Show("La venta es mayor al numero introducido", "Datos ingresados incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtRecibi.Text = null;
                 }
                 else {
                     txtCambio.Text = Convert.ToString(Convert.ToInt32(txtRecibi.Text) - to);
@@ -258,7 +259,8 @@ namespace ProyectoMovistar
 
 
                 }
-
+                txtRecibi.Text = null;
+                txtCambio.Text = null;
             }
             catch(Exception ex)
             {

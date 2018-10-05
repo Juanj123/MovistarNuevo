@@ -50,7 +50,7 @@ namespace capaDatos
             correo.From = new MailAddress("generalsolutionsti@gmail.com");
             correo.To.Add(email);
             correo.Subject = ("Recuperar contraseña");
-            correo.Body = "Hola, " + nombre + " Usted solicito recuperar contreseña. \n Su contraseña es: " + contrasenia;
+            correo.Body = "Hola, " + nombre + " Usted solicito recuperar contraseña. \n Su contraseña es: " + contrasenia;
             correo.Priority = MailPriority.High;
 
             // configuracion protoculo SMTP

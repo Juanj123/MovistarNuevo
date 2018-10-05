@@ -220,7 +220,7 @@
             this.cmbTipo.FormattingEnabled = true;
             this.cmbTipo.Items.AddRange(new object[] {
             "Administrador",
-            "Trabajador"});
+            "Empleado"});
             this.cmbTipo.Location = new System.Drawing.Point(479, 190);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(220, 25);
