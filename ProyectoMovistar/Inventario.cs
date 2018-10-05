@@ -51,49 +51,57 @@ namespace ProyectoMovistar
         principal p = new principal();
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            
-            rutaFinal = @"C:\ImagenesProductos\" + Direccion.Substring(Direccion.LastIndexOf(@"\"));
-            clsInventario objProducto = new clsInventario();
-            clsDatosInventario objDatosInventario = new clsDatosInventario();
-            //Se leen los datos de los txt
-            objProducto.Clave = txtClave.Text;
-            objProducto.Nombre = txtNombre.Text;
-            objProducto.Precio = Convert.ToInt32(txtPrecio.Text);
-            objProducto.Categoria = objDatosInventario.getIdCategoria(cmbCategoria.Text);
-            objProducto.Existencia = Convert.ToInt32(txtExistencia.Text);
-            objProducto.Descripcion = txtDescripcion.Text;
-            objProducto.Idusuario = objDatosInventario.getIdEmpleado(Program.nombre);
-            objProducto.RutaImg = rutaFinal;
-            // INSERTA AL PRODUCTO MEDIANTE EL MÉTODO
-            objDatosInventario.AgregarProducto(objProducto);
-            // MUESTRA MENSAJE DE CONFIRMACION
-            MessageBox.Show("Agregado", "Agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //creas carpeta que contendra las imagenes de los productos
-            
+            try
+            {
+                rutaFinal = @"C:\ImagenesProductos\" + Direccion.Substring(Direccion.LastIndexOf(@"\"));
+                clsInventario objProducto = new clsInventario();
+                clsDatosInventario objDatosInventario = new clsDatosInventario();
+                //Se leen los datos de los txt
+                objProducto.Clave = txtClave.Text;
+                objProducto.Nombre = txtNombre.Text;
+                objProducto.Precio = Convert.ToInt32(txtPrecio.Text);
+                objProducto.Categoria = objDatosInventario.getIdCategoria(cmbCategoria.Text);
+                objProducto.Existencia = Convert.ToInt32(txtExistencia.Text);
+                objProducto.Descripcion = txtDescripcion.Text;
+                objProducto.Idusuario = objDatosInventario.getIdEmpleado(Program.nombre);
+                objProducto.RutaImg = rutaFinal;
+                // INSERTA AL PRODUCTO MEDIANTE EL MÉTODO
+                objDatosInventario.AgregarProducto(objProducto);
+                // MUESTRA MENSAJE DE CONFIRMACION
+                MessageBox.Show("Agregado", "Agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //creas carpeta que contendra las imagenes de los productos
 
-            
-            
+
+
+
                 if (Directory.Exists(@"C:\ImagenesProductos"))
                 {
                     //MessageBox.Show("Capeta ya existe");
-                    mycomputer.FileSystem.MoveFile(Direccion,rutaFinal);
+                    mycomputer.FileSystem.MoveFile(Direccion, rutaFinal);
                 }
-                else {
-                   // MessageBox.Show("No existe Carpeta Creando..............");
+                else
+                {
+                    // MessageBox.Show("No existe Carpeta Creando..............");
                     Directory.CreateDirectory(@"C:\ImagenesProductos\");
                     mycomputer.FileSystem.MoveFile(Direccion, rutaFinal);
 
-            }
-            
+                }
 
-            txtClave.Text = "";
-            txtNombre.Text = "";
-            cmbCategoria.Text = "";
-            txtPrecio.Text = "";
-            txtExistencia.Text = "";
-            txtDescripcion.Text = "";
-            pbProducto.Image = null;
-            verProductos();
+
+                txtClave.Text = "";
+                txtNombre.Text = "";
+                cmbCategoria.Text = "";
+                txtPrecio.Text = "";
+                txtExistencia.Text = "";
+                txtDescripcion.Text = "";
+                pbProducto.Image = null;
+                verProductos();
+            }
+            catch (Exception ex) {
+
+                MessageBox.Show("Campos Vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+           
         }
 
         private void verProductos()
@@ -347,21 +355,29 @@ namespace ProyectoMovistar
         {
             if (e.KeyChar == (char)13)
             {
-                clsCategorias obj = new clsCategorias();
-                clsDatosInventario obj2 = new clsDatosInventario();
-                obj.Nombre = txtNuevaCategoria.Text;
-                obj2.AgregarCategoria(obj);
-                MessageBox.Show("Se agrego categoria");
-                txtNuevaCategoria.Text = "";
-                txtNuevaCategoria.Visible = false;
-                lblNuevaCategoria.Visible = false;
-                cmbCategoria.Items.Clear();
-                clsDatosInventario o = new clsDatosInventario();
-                var lista = o.listaCategorias();
-                for (int i = 0; i < lista.Count; i++)
+                if (txtNuevaCategoria.Text.Equals("") | txtNuevaCategoria.Text.Equals(" "))
                 {
-                    cmbCategoria.Items.Insert(i, lista[i].Nombre);
+                    MessageBox.Show("Categoria Vacia", "Information", MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
+                else {
+                    clsCategorias obj = new clsCategorias();
+                    clsDatosInventario obj2 = new clsDatosInventario();
+                    obj.Nombre = txtNuevaCategoria.Text;
+                    obj2.AgregarCategoria(obj);
+                    MessageBox.Show("Se agrego categoria");
+                    txtNuevaCategoria.Text = "";
+                    txtNuevaCategoria.Visible = false;
+                    lblNuevaCategoria.Visible = false;
+                    cmbCategoria.Items.Clear();
+                    clsDatosInventario o = new clsDatosInventario();
+                    var lista = o.listaCategorias();
+                    for (int i = 0; i < lista.Count; i++)
+                    {
+                        cmbCategoria.Items.Insert(i, lista[i].Nombre);
+                    }
+
+                }
+               
             }
         }
 
@@ -382,6 +398,11 @@ namespace ProyectoMovistar
                     dataGridView1.Rows.Add(elemento.Clave, elemento.Nombre, elemento.Precio, elemento.Existencia);
                 }
             }
+        }
+
+        private void txtNuevaCategoria_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

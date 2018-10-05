@@ -45,7 +45,7 @@ namespace ProyectoMovistar
             {
                 dgVenta.DataSource = daoReporte.MostrarVenta(daoReporte.obtenerId(cmbEmpleados.SelectedItem.ToString()), dtpfecha.Text);
 
-                txtTotal.Text = Convert.ToString(daoReporte.obtenerTotal(daoReporte.obtenerId(cmbEmpleados.SelectedItem.ToString()), dtpfecha.Text));
+                txtTotal.Text = sumar();
             }
             else
             {
@@ -53,6 +53,17 @@ namespace ProyectoMovistar
             }
         }
 
+        public string sumar()
+        {
+            
+            int sumad=0;
+            int c = 1;
+            for (int i = 0; i < dgVenta.RowCount; i++)
+            {
+                sumad += Convert.ToInt32(dgVenta.Rows[i].Cells[3].Value);
+            }
+            return Convert.ToString(sumad);
+        }
         private void ReporteVenta_Load(object sender, EventArgs e)
         {
             mostrarEmpleados();

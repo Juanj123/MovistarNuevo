@@ -57,14 +57,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pbProducto = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.txtNuevaCategoria = new System.Windows.Forms.TextBox();
+            this.lblNuevaCategoria = new System.Windows.Forms.Label();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblNuevaCategoria = new System.Windows.Forms.Label();
-            this.txtNuevaCategoria = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -405,6 +405,39 @@
             this.groupBox1.Text = "Producto";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(461, 98);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(23, 23);
+            this.button4.TabIndex = 22;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // txtNuevaCategoria
+            // 
+            this.txtNuevaCategoria.Location = new System.Drawing.Point(229, 127);
+            this.txtNuevaCategoria.Name = "txtNuevaCategoria";
+            this.txtNuevaCategoria.Size = new System.Drawing.Size(220, 20);
+            this.txtNuevaCategoria.TabIndex = 18;
+            this.txtNuevaCategoria.TextChanged += new System.EventHandler(this.txtNuevaCategoria_TextChanged);
+            this.txtNuevaCategoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNuevaCategoria_KeyPress);
+            // 
+            // lblNuevaCategoria
+            // 
+            this.lblNuevaCategoria.AutoSize = true;
+            this.lblNuevaCategoria.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.lblNuevaCategoria.Location = new System.Drawing.Point(104, 128);
+            this.lblNuevaCategoria.Name = "lblNuevaCategoria";
+            this.lblNuevaCategoria.Size = new System.Drawing.Size(125, 17);
+            this.lblNuevaCategoria.TabIndex = 17;
+            this.lblNuevaCategoria.Text = "Ingresa Categoria";
+            // 
             // cmbCategoria
             // 
             this.cmbCategoria.FormattingEnabled = true;
@@ -417,7 +450,7 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(46, 123);
+            this.linkLabel1.Location = new System.Drawing.Point(40, 126);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(67, 17);
             this.linkLabel1.TabIndex = 15;
@@ -464,37 +497,6 @@
             this.label5.Size = new System.Drawing.Size(74, 17);
             this.label5.TabIndex = 5;
             this.label5.Text = "Existencia:";
-            // 
-            // lblNuevaCategoria
-            // 
-            this.lblNuevaCategoria.AutoSize = true;
-            this.lblNuevaCategoria.Location = new System.Drawing.Point(139, 127);
-            this.lblNuevaCategoria.Name = "lblNuevaCategoria";
-            this.lblNuevaCategoria.Size = new System.Drawing.Size(90, 13);
-            this.lblNuevaCategoria.TabIndex = 17;
-            this.lblNuevaCategoria.Text = "Ingresa Categoria";
-            // 
-            // txtNuevaCategoria
-            // 
-            this.txtNuevaCategoria.Location = new System.Drawing.Point(229, 127);
-            this.txtNuevaCategoria.Name = "txtNuevaCategoria";
-            this.txtNuevaCategoria.Size = new System.Drawing.Size(220, 20);
-            this.txtNuevaCategoria.TabIndex = 18;
-            this.txtNuevaCategoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNuevaCategoria_KeyPress);
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(461, 98);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(23, 23);
-            this.button4.TabIndex = 22;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Inventario
             // 

@@ -182,6 +182,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button2
             // 
@@ -230,6 +231,7 @@
             this.txtRecibi.TabIndex = 10;
             this.txtRecibi.TextChanged += new System.EventHandler(this.txtRecibi_TextChanged);
             this.txtRecibi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
+            this.txtRecibi.Leave += new System.EventHandler(this.txtRecibi_Leave);
             // 
             // txtCambio
             // 

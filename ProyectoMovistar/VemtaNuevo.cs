@@ -31,7 +31,7 @@ namespace ProyectoMovistar
            
             lblatendio.Text = Program.nombre;
 
-            MessageBox.Show(usuario);
+            
             generaColumnas();
 
             txtBuscarProducto.AutoCompleteCustomSource = cargarDatos();
@@ -129,6 +129,7 @@ namespace ProyectoMovistar
 
                 }
               }
+            numericUpDown1.Value = 1;
             }
 
         private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
@@ -282,6 +283,27 @@ namespace ProyectoMovistar
         private void txtRecibi_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            VentaList.Clear();
+            txtTotal.Text = "";
+            txtRecibi.Text = "";
+            txtCambio.Text = "";
+            numericUpDown1.Value = 1;
+        }
+
+        private void txtRecibi_Leave(object sender, EventArgs e)
+        {
+            if (to > Convert.ToInt32(txtRecibi.Text))
+            {
+                MessageBox.Show("La venta es mayor al numero introducido", "No se puede realizar venta",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+            else {
+                txtCambio.Text = Convert.ToString(Convert.ToInt32(txtRecibi.Text) - to);
+            }
         }
     }
     }

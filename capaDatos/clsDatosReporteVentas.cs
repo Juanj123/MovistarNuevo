@@ -52,7 +52,7 @@ namespace capaDatos
             {
                 DataTable dato = new DataTable();
                 conexion.conectar();
-                MySqlCommand cm = new MySqlCommand("select d.nombreProduct, d.precioProcuct, d.cantidadProduct, v.total from dVenta d join ventas v where d.folio = v.folio and v.idUsuario = " + idEmpleado + " and v.fecha like '" + fecha.ToString() + "'", conexion.cn);
+                MySqlCommand cm = new MySqlCommand("select d.nombreProduct, d.precioProcuct, d.cantidadProduct   , d.total from dVentas d join ventas v where d.folio = v.folio and v.idUsuario = " + idEmpleado + " and v.fecha like '" + fecha.ToString() + "'", conexion.cn);
                 MySqlDataAdapter dt = new MySqlDataAdapter(cm);
                 DataSet ds = new DataSet();
                 dt.Fill(ds, "dVenta");

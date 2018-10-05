@@ -126,11 +126,14 @@ namespace ProyectoMovistar
         {
             try
             {
-                consulta.Eliminar(id);
-                MessageBox.Show("Usuario eliminado", "Usuarios", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
-                Actualizar();
-                habilitar();
-                limpiar();
+                if(MessageBox.Show("Se borrara todos los datos ingresados por este usuario","Informacion", MessageBoxButtons.OKCancel,MessageBoxIcon.Information) == DialogResult.OK)
+                {
+                    consulta.Eliminar(id);
+                    MessageBox.Show("Usuario eliminado", "Usuarios", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
+                    Actualizar();
+                    habilitar();
+                    limpiar();
+                }
 
             }
             catch (Exception exc)

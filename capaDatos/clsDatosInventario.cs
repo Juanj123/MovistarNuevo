@@ -92,8 +92,7 @@ namespace capaDatos
 
 
             sql = "UPDATE inventario SET clave = @clave, idUsuario = @idusuario, idCategoria = @Categoria, imgProducto = @imgProducto," +
-                "nombre = @nombre, precio = @precio, existencia = @existencia, descripcion = @descripcion" +
-                "WHERE clave = @clave";
+                "nombre = @nombre, precio = @precio, existencia = @existencia, descripcion = @descripcion WHERE clave = @clave";
             cm.CommandText = sql;
             cm.CommandType = CommandType.Text;
             cm.Connection = cone.cn;
@@ -215,7 +214,7 @@ namespace capaDatos
             MySqlCommand cm = new MySqlCommand();
             MySqlDataReader dr;
             cone.conectar();
-            sql = "SELECT  clave, nombre, precio, existencia from inventario where idCategoria like '" + clave + "%'";
+            sql = "select distinct i.clave, i.nombre, i.precio, i.existencia from inventario i join categoria c where i.idCategoria=" + clave ;
             cm.CommandText = sql;
             cm.CommandType = CommandType.Text;
             cm.Connection = cone.cn;
