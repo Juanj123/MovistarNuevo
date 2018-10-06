@@ -62,7 +62,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(22, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(365, 413);
+            this.groupBox1.Size = new System.Drawing.Size(332, 413);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Usuarios";
@@ -112,7 +112,7 @@
             this.dataGridView1.GridColor = System.Drawing.Color.White;
             this.dataGridView1.Location = new System.Drawing.Point(3, 25);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(359, 385);
+            this.dataGridView1.Size = new System.Drawing.Size(326, 385);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
             // 
@@ -121,7 +121,6 @@
             this.Nombre.Frozen = true;
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
             this.Nombre.Width = 91;
             // 
             // Correo
@@ -129,7 +128,6 @@
             this.Correo.Frozen = true;
             this.Correo.HeaderText = "Correo";
             this.Correo.Name = "Correo";
-            this.Correo.ReadOnly = true;
             this.Correo.Width = 83;
             // 
             // Tipo
@@ -137,7 +135,6 @@
             this.Tipo.Frozen = true;
             this.Tipo.HeaderText = "Tipo";
             this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
             this.Tipo.Width = 65;
             // 
             // label1
