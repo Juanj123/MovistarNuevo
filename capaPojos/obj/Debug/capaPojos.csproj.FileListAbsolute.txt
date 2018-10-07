@@ -52,3 +52,9 @@ C:\Users\Juanjo\Desktop\M\MovistarNuevo\capaPojos\obj\Debug\capaPojos.csprojAsse
 C:\Users\Juanjo\Desktop\M\MovistarNuevo\capaPojos\obj\Debug\capaPojos.csproj.CoreCompileInputs.cache
 C:\Users\Juanjo\Desktop\M\MovistarNuevo\capaPojos\obj\Debug\capaPojos.dll
 C:\Users\Juanjo\Desktop\M\MovistarNuevo\capaPojos\obj\Debug\capaPojos.pdb
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\capaPojos\bin\Debug\capaPojos.dll
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\capaPojos\bin\Debug\capaPojos.pdb
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\capaPojos\obj\Debug\capaPojos.csprojResolveAssemblyReference.cache
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\capaPojos\obj\Debug\capaPojos.csproj.CoreCompileInputs.cache
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\capaPojos\obj\Debug\capaPojos.dll
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\capaPojos\obj\Debug\capaPojos.pdb

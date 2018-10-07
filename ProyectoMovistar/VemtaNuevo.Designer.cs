@@ -217,6 +217,7 @@
             this.txtTotal.Location = new System.Drawing.Point(667, 362);
             this.txtTotal.Multiline = true;
             this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(100, 35);
             this.txtTotal.TabIndex = 9;
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -239,6 +240,7 @@
             this.txtCambio.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCambio.Location = new System.Drawing.Point(667, 433);
             this.txtCambio.Name = "txtCambio";
+            this.txtCambio.ReadOnly = true;
             this.txtCambio.Size = new System.Drawing.Size(100, 23);
             this.txtCambio.TabIndex = 11;
             // 
@@ -279,9 +281,8 @@
             this.lblatendio.Location = new System.Drawing.Point(110, 44);
             this.lblatendio.Name = "lblatendio";
             this.lblatendio.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblatendio.Size = new System.Drawing.Size(51, 17);
+            this.lblatendio.Size = new System.Drawing.Size(0, 17);
             this.lblatendio.TabIndex = 16;
-            this.lblatendio.Text = "Juanjo";
             // 
             // dtpFecha
             // 

@@ -114,3 +114,32 @@ C:\Users\Juanjo\Desktop\M\MovistarNuevo\Ticket\obj\Debug\Ticket.csproj.CoreCompi
 C:\Users\Juanjo\Desktop\M\MovistarNuevo\Ticket\obj\Debug\Ticket.csproj.CopyComplete
 C:\Users\Juanjo\Desktop\M\MovistarNuevo\Ticket\obj\Debug\Ticket.exe
 C:\Users\Juanjo\Desktop\M\MovistarNuevo\Ticket\obj\Debug\Ticket.pdb
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\bin\Debug\Ticket.exe
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\bin\Debug\Ticket.pdb
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\bin\Debug\FlashControlV71.dll
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\bin\Debug\stdole.dll
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\obj\Debug\Ticket.csprojResolveAssemblyReference.cache
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\obj\Debug\Ticket.Form1.resources
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\obj\Debug\Ticket.Properties.Resources.resources
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\obj\Debug\Ticket.csproj.GenerateResource.cache
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\obj\Debug\Ticket.csproj.CoreCompileInputs.cache
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\obj\Debug\Ticket.csproj.CopyComplete
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\obj\Debug\Ticket.exe
+C:\Users\Angel\Videos\El BUeno\MovistarNuevo\Ticket\obj\Debug\Ticket.pdb

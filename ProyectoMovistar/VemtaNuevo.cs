@@ -26,6 +26,7 @@ namespace ProyectoMovistar
         }
         static string usuario;
         clsDatosVenta v = new clsDatosVenta();
+        
         private void VemtaNuevo_Load(object sender, EventArgs e)
         {
            
@@ -76,44 +77,17 @@ namespace ProyectoMovistar
         int i = 0;
         private void button3_Click(object sender, EventArgs e)
         {
-            
-            clsDatosInventario inventarioo = new clsDatosInventario();
-            string varProducto = txtBuscarProducto.Text;
-            int varPrecio = v.getPrecio(txtBuscarProducto.Text);
-            int varCantidad = Convert.ToInt32(numericUpDown1.Value);
-            total = Convert.ToDouble(varPrecio * varCantidad);
-            string[] elementosFila = new string[5];
-            ListViewItem elementoListView;
-
-            if (VentaList.Items.Count == 0)
+            if (v.cantidad(txtBuscarProducto.Text) > 0)
             {
-                elementosFila[0] = varProducto;
-                elementosFila[1] = Convert.ToString(varCantidad);
-                elementosFila[2] = Convert.ToString(varPrecio);
-                elementosFila[3] = Convert.ToString(total);
-                elementoListView = new ListViewItem(elementosFila);
-                VentaList.Items.Add(elementoListView);
-                to = to + Convert.ToInt32(total);
-                txtTotal.Text = Convert.ToString(to);
+                clsDatosInventario inventarioo = new clsDatosInventario();
+                string varProducto = txtBuscarProducto.Text;
+                int varPrecio = v.getPrecio(txtBuscarProducto.Text);
+                int varCantidad = Convert.ToInt32(numericUpDown1.Value);
+                total = Convert.ToDouble(varPrecio * varCantidad);
+                string[] elementosFila = new string[5];
+                ListViewItem elementoListView;
 
-                txtBuscarProducto.Text = "";
-            }
-            else {
-
-                ListViewItem item1 = VentaList.FindItemWithText(varProducto);
-                if (item1 != null)
-                {
-                    
-                    int h = Convert.ToInt32(VentaList.Items[item1.Index].SubItems[1].Text) + varCantidad;
-                    VentaList.Items[item1.Index].SubItems[1].Text = Convert.ToString(h);
-                    VentaList.Items[item1.Index].SubItems[3].Text = Convert.ToString(h* Convert.ToInt32(VentaList.Items[item1.Index].SubItems[2].Text));
-                    to = to + Convert.ToInt32(total);
-                    txtTotal.Text = Convert.ToString(to);
-
-                    txtBuscarProducto.Text = "";
-                    i++;
-                }
-                else
+                if (VentaList.Items.Count == 0)
                 {
                     elementosFila[0] = varProducto;
                     elementosFila[1] = Convert.ToString(varCantidad);
@@ -125,12 +99,47 @@ namespace ProyectoMovistar
                     txtTotal.Text = Convert.ToString(to);
 
                     txtBuscarProducto.Text = "";
-                    i++;
-
                 }
-              }
-            numericUpDown1.Value = 1;
+                else
+                {
+
+                    ListViewItem item1 = VentaList.FindItemWithText(varProducto);
+                    if (item1 != null)
+                    {
+
+                        int h = Convert.ToInt32(VentaList.Items[item1.Index].SubItems[1].Text) + varCantidad;
+                        VentaList.Items[item1.Index].SubItems[1].Text = Convert.ToString(h);
+                        VentaList.Items[item1.Index].SubItems[3].Text = Convert.ToString(h * Convert.ToInt32(VentaList.Items[item1.Index].SubItems[2].Text));
+                        to = to + Convert.ToInt32(total);
+                        txtTotal.Text = Convert.ToString(to);
+
+                        txtBuscarProducto.Text = "";
+                        i++;
+                    }
+                    else
+                    {
+                        elementosFila[0] = varProducto;
+                        elementosFila[1] = Convert.ToString(varCantidad);
+                        elementosFila[2] = Convert.ToString(varPrecio);
+                        elementosFila[3] = Convert.ToString(total);
+                        elementoListView = new ListViewItem(elementosFila);
+                        VentaList.Items.Add(elementoListView);
+                        to = to + Convert.ToInt32(total);
+                        txtTotal.Text = Convert.ToString(to);
+
+                        txtBuscarProducto.Text = "";
+                        i++;
+
+                    }
+                }
+                numericUpDown1.Value = 1;
             }
+            else
+            {
+                MessageBox.Show("cantidad insuficiente en inventario ó producto no existe en inventario", "Información",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+
+        }
 
         private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -149,7 +158,7 @@ namespace ProyectoMovistar
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (txtRecibi.Text == "")
+            if (txtRecibi.Text.Equals("") || VentaList.Items.Equals("") || txtTotal.Text.Equals("") || txtCambio.Text.Equals(""))
             {
                 MessageBox.Show("Llene primero el campo de Recibo", "Datos ingresados incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
