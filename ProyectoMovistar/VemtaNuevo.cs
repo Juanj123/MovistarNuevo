@@ -77,7 +77,7 @@ namespace ProyectoMovistar
         int i = 0;
         private void button3_Click(object sender, EventArgs e)
         {
-            if (v.cantidad(txtBuscarProducto.Text) > 0)
+            if (v.cantidad(txtBuscarProducto.Text) > 0 && v.cantidad(txtBuscarProducto.Text) >= Convert.ToUInt32(numericUpDown1.Value))
             {
                 clsDatosInventario inventarioo = new clsDatosInventario();
                 string varProducto = txtBuscarProducto.Text;
@@ -89,12 +89,17 @@ namespace ProyectoMovistar
 
                 if (VentaList.Items.Count == 0)
                 {
+                    
                     elementosFila[0] = varProducto;
                     elementosFila[1] = Convert.ToString(varCantidad);
                     elementosFila[2] = Convert.ToString(varPrecio);
                     elementosFila[3] = Convert.ToString(total);
                     elementoListView = new ListViewItem(elementosFila);
-                    VentaList.Items.Add(elementoListView);
+                    if (Convert.ToUInt32(elementosFila[1]) <= v.cantidad(txtBuscarProducto.Text) )
+                    {
+                        VentaList.Items.Add(elementoListView);
+                    }
+                    
                     to = to + Convert.ToInt32(total);
                     txtTotal.Text = Convert.ToString(to);
 
@@ -106,15 +111,28 @@ namespace ProyectoMovistar
                     ListViewItem item1 = VentaList.FindItemWithText(varProducto);
                     if (item1 != null)
                     {
+                        int resta  = v.cantidad(txtBuscarProducto.Text) - Convert.ToInt32(VentaList.Items[item1.Index].SubItems[1].Text);
+                        MessageBox.Show(resta + "");
+                        if (Convert.ToInt32(VentaList.Items[item1.Index].SubItems[1].Text) <= v.cantidad(txtBuscarProducto.Text) && Convert.ToInt32(VentaList.Items[item1.Index].SubItems[1].Text) != v.cantidad(txtBuscarProducto.Text) )
+                        {
+                            if (resta <= v.cantidad(txtBuscarProducto.Text) || resta >= v.cantidad(txtBuscarProducto.Text))
+                            {
+                                int h = Convert.ToInt32(VentaList.Items[item1.Index].SubItems[1].Text) + varCantidad;
+                                VentaList.Items[item1.Index].SubItems[1].Text = Convert.ToString(h);
+                                VentaList.Items[item1.Index].SubItems[3].Text = Convert.ToString(h * Convert.ToInt32(VentaList.Items[item1.Index].SubItems[2].Text));
+                                to = to + Convert.ToInt32(total);
+                                txtTotal.Text = Convert.ToString(to);
 
-                        int h = Convert.ToInt32(VentaList.Items[item1.Index].SubItems[1].Text) + varCantidad;
-                        VentaList.Items[item1.Index].SubItems[1].Text = Convert.ToString(h);
-                        VentaList.Items[item1.Index].SubItems[3].Text = Convert.ToString(h * Convert.ToInt32(VentaList.Items[item1.Index].SubItems[2].Text));
-                        to = to + Convert.ToInt32(total);
-                        txtTotal.Text = Convert.ToString(to);
-
-                        txtBuscarProducto.Text = "";
-                        i++;
+                                txtBuscarProducto.Text = "";
+                                i++;
+                            }
+                            
+                        }
+                        else
+                        {
+                            MessageBox.Show("Se excedió del limite de producto en inventario", "Informacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        
                     }
                     else
                     {
@@ -123,7 +141,11 @@ namespace ProyectoMovistar
                         elementosFila[2] = Convert.ToString(varPrecio);
                         elementosFila[3] = Convert.ToString(total);
                         elementoListView = new ListViewItem(elementosFila);
-                        VentaList.Items.Add(elementoListView);
+                        if (Convert.ToInt32(VentaList.Items[item1.Index].SubItems[1].Text) <= v.cantidad(txtBuscarProducto.Text) && v.cantidad(txtBuscarProducto.Text) >= Convert.ToUInt32(numericUpDown1.Value))
+                        {
+                            VentaList.Items.Add(elementoListView);
+                        }
+                            
                         to = to + Convert.ToInt32(total);
                         txtTotal.Text = Convert.ToString(to);
 
@@ -164,7 +186,7 @@ namespace ProyectoMovistar
             }
             else
             {
-                
+           
 
                 clsDatosInventario inventarioo = new clsDatosInventario();
                 clsDatosVenta objDao = new clsDatosVenta();
