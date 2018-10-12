@@ -1,0 +1,11 @@
+C:\Users\Juanjo\Desktop\El BUeno\MovistarNuevo\capaDatos\obj\Release\capaDatos.csprojAssemblyReference.cache
+C:\Users\Juanjo\Desktop\El BUeno\MovistarNuevo\capaDatos\obj\Release\capaDatos.csproj.CoreCompileInputs.cache
+C:\Users\Juanjo\Desktop\El BUeno\MovistarNuevo\capaDatos\bin\Release\capaDatos.dll
+C:\Users\Juanjo\Desktop\El BUeno\MovistarNuevo\capaDatos\bin\Release\capaDatos.pdb
+C:\Users\Juanjo\Desktop\El BUeno\MovistarNuevo\capaDatos\bin\Release\capaPojos.dll
+C:\Users\Juanjo\Desktop\El BUeno\MovistarNuevo\capaDatos\bin\Release\MySql.Data.dll
+C:\Users\Juanjo\Desktop\El BUeno\MovistarNuevo\capaDatos\bin\Release\capaPojos.pdb
+C:\Users\Juanjo\Desktop\El BUeno\MovistarNuevo\capaDatos\bin\Release\MySql.Data.xml
+C:\Users\Juanjo\Desktop\El BUeno\MovistarNuevo\capaDatos\obj\Release\capaDatos.csproj.CopyComplete
+C:\Users\Juanjo\Desktop\El BUeno\MovistarNuevo\capaDatos\obj\Release\capaDatos.dll
+C:\Users\Juanjo\Desktop\El BUeno\MovistarNuevo\capaDatos\obj\Release\capaDatos.pdb

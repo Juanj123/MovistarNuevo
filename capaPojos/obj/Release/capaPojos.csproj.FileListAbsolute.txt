@@ -1,0 +1,6 @@
+C:\Users\Juanjo\Desktop\El BUeno\MovistarNuevo\capaPojos\bin\Release\capaPojos.dll
+C:\Users\Juanjo\Desktop\El BUeno\MovistarNuevo\capaPojos\bin\Release\capaPojos.pdb
+C:\Users\Juanjo\Desktop\El BUeno\MovistarNuevo\capaPojos\obj\Release\capaPojos.csprojAssemblyReference.cache
+C:\Users\Juanjo\Desktop\El BUeno\MovistarNuevo\capaPojos\obj\Release\capaPojos.csproj.CoreCompileInputs.cache
+C:\Users\Juanjo\Desktop\El BUeno\MovistarNuevo\capaPojos\obj\Release\capaPojos.dll
+C:\Users\Juanjo\Desktop\El BUeno\MovistarNuevo\capaPojos\obj\Release\capaPojos.pdb

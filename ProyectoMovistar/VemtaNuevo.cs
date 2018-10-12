@@ -75,49 +75,63 @@ namespace ProyectoMovistar
         int to;
         double total;
         int i = 0;
+        int h;
         private void button3_Click(object sender, EventArgs e)
         {
-            if (v.cantidad(txtBuscarProducto.Text) > 0 && v.cantidad(txtBuscarProducto.Text) >= Convert.ToUInt32(numericUpDown1.Value))
+            if (v.getyesorno(txtBuscarProducto.Text) > 0)
             {
-                clsDatosInventario inventarioo = new clsDatosInventario();
-                string varProducto = txtBuscarProducto.Text;
-                int varPrecio = v.getPrecio(txtBuscarProducto.Text);
-                int varCantidad = Convert.ToInt32(numericUpDown1.Value);
-                total = Convert.ToDouble(varPrecio * varCantidad);
-                string[] elementosFila = new string[5];
-                ListViewItem elementoListView;
+                //ListViewItem list = VentaList.FindItemWithText(txtBuscarProducto.Text);
+                //int suma =Convert.ToInt32(VentaList.Items[list.Index].SubItems[1].Text)+Convert.ToInt32(numericUpDown1.Value);
+                //if (suma < v.cantidad(txtBuscarProducto.Text))
+                //{
+                    clsDatosInventario inventarioo = new clsDatosInventario();
+                    string varProducto = txtBuscarProducto.Text;
+                    int varPrecio = v.getPrecio(txtBuscarProducto.Text);
+                    int varCantidad = Convert.ToInt32(numericUpDown1.Value);
+                    total = Convert.ToDouble(varPrecio * varCantidad);
+                    string[] elementosFila = new string[5];
+                    ListViewItem elementoListView;
 
-                if (VentaList.Items.Count == 0)
-                {
-                    
-                    elementosFila[0] = varProducto;
-                    elementosFila[1] = Convert.ToString(varCantidad);
-                    elementosFila[2] = Convert.ToString(varPrecio);
-                    elementosFila[3] = Convert.ToString(total);
-                    elementoListView = new ListViewItem(elementosFila);
-                    if (Convert.ToUInt32(elementosFila[1]) <= v.cantidad(txtBuscarProducto.Text) )
+                    if (VentaList.Items.Count == 0)
                     {
-                        VentaList.Items.Add(elementoListView);
-                    }
-                    
-                    to = to + Convert.ToInt32(total);
-                    txtTotal.Text = Convert.ToString(to);
-
-                    txtBuscarProducto.Text = "";
-                }
-                else
-                {
-
-                    ListViewItem item1 = VentaList.FindItemWithText(varProducto);
-                    if (item1 != null)
+                   
+                    if (varCantidad <= v.cantidad(varProducto))
                     {
-                        int resta  = v.cantidad(txtBuscarProducto.Text) - Convert.ToInt32(VentaList.Items[item1.Index].SubItems[1].Text);
-                        MessageBox.Show(resta + "");
-                        if (Convert.ToInt32(VentaList.Items[item1.Index].SubItems[1].Text) <= v.cantidad(txtBuscarProducto.Text) && Convert.ToInt32(VentaList.Items[item1.Index].SubItems[1].Text) != v.cantidad(txtBuscarProducto.Text) )
+                        elementosFila[0] = varProducto;
+                        elementosFila[1] = Convert.ToString(varCantidad);
+                        elementosFila[2] = Convert.ToString(varPrecio);
+                        elementosFila[3] = Convert.ToString(total);
+                        elementoListView = new ListViewItem(elementosFila);
+                        if (Convert.ToUInt32(elementosFila[1]) <= v.cantidad(txtBuscarProducto.Text))
                         {
-                            if (resta <= v.cantidad(txtBuscarProducto.Text) || resta >= v.cantidad(txtBuscarProducto.Text))
+                            VentaList.Items.Add(elementoListView);
+                        }
+
+                        to = to + Convert.ToInt32(total);
+                        txtTotal.Text = Convert.ToString(to);
+
+                        txtBuscarProducto.Text = "";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se excedió del limite de producto en inventario", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                    else
+                    {
+
+                        ListViewItem item1 = VentaList.FindItemWithText(varProducto);
+                        if (item1 != null)
+                        {
+                            //int resta = v.cantidad(txtBuscarProducto.Text) - Convert.ToInt32(VentaList.Items[item1.Index].SubItems[1].Text);
+                            //MessageBox.Show(resta + "");
+                            //if (resta > 0)
+                            //{
+                            //if (resta <= v.cantidad(txtBuscarProducto.Text) || resta >= v.cantidad(txtBuscarProducto.Text))
+                            //{
+                             h = Convert.ToInt32(VentaList.Items[item1.Index].SubItems[1].Text) + varCantidad;
+                            if (h <= v.cantidad(varProducto))
                             {
-                                int h = Convert.ToInt32(VentaList.Items[item1.Index].SubItems[1].Text) + varCantidad;
                                 VentaList.Items[item1.Index].SubItems[1].Text = Convert.ToString(h);
                                 VentaList.Items[item1.Index].SubItems[3].Text = Convert.ToString(h * Convert.ToInt32(VentaList.Items[item1.Index].SubItems[2].Text));
                                 to = to + Convert.ToInt32(total);
@@ -125,40 +139,57 @@ namespace ProyectoMovistar
 
                                 txtBuscarProducto.Text = "";
                                 i++;
+                                //resta = 0;
+                                //}
+
+                                //}
+                                //else
+                                //{
+                                //    MessageBox.Show("Se excedió del limite de producto en inventario", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                //}
                             }
-                            
+                            else {
+                                MessageBox.Show("Se excedió del limite de producto en inventario", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+
+
                         }
                         else
                         {
-                            MessageBox.Show("Se excedió del limite de producto en inventario", "Informacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        
-                    }
-                    else
-                    {
-                        elementosFila[0] = varProducto;
-                        elementosFila[1] = Convert.ToString(varCantidad);
-                        elementosFila[2] = Convert.ToString(varPrecio);
-                        elementosFila[3] = Convert.ToString(total);
-                        elementoListView = new ListViewItem(elementosFila);
-                        if (Convert.ToInt32(VentaList.Items[item1.Index].SubItems[1].Text) <= v.cantidad(txtBuscarProducto.Text) && v.cantidad(txtBuscarProducto.Text) >= Convert.ToUInt32(numericUpDown1.Value))
-                        {
-                            VentaList.Items.Add(elementoListView);
-                        }
-                            
-                        to = to + Convert.ToInt32(total);
-                        txtTotal.Text = Convert.ToString(to);
+                            if (h <= v.cantidad(varProducto))
+                            {
+                                elementosFila[0] = varProducto;
+                                elementosFila[1] = Convert.ToString(varCantidad);
+                                elementosFila[2] = Convert.ToString(varPrecio);
+                                elementosFila[3] = Convert.ToString(total);
+                                elementoListView = new ListViewItem(elementosFila);
 
-                        txtBuscarProducto.Text = "";
-                        i++;
+                                VentaList.Items.Add(elementoListView);
 
+
+                                to = to + Convert.ToInt32(total);
+                                txtTotal.Text = Convert.ToString(to);
+
+                                txtBuscarProducto.Text = "";
+                                i++;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Se excedió del limite de producto en inventario", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+
+                        }
                     }
-                }
-                numericUpDown1.Value = 1;
+                    numericUpDown1.Value = 1;
+                //}
+                //else {
+                //    MessageBox.Show("Se excedió del limite de producto en inventario", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //}
+               
             }
             else
             {
-                MessageBox.Show("cantidad insuficiente en inventario ó producto no existe en inventario", "Información",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("No se encuntra el producto", "Información",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 
         }
