@@ -76,8 +76,9 @@ namespace ProyectoMovistar
 
                 txtNombre.Text = dataGridView1[0, poc].Value.ToString();
                 txtCorreo.Text = dataGridView1[1, poc].Value.ToString();
+                cmbTipo.Text = dataGridView1[2, poc].Value.ToString();
 
-                txtContrasenia.Enabled = false;
+                txtContrasenia.Enabled = true;
                 cmbTipo.Enabled = true;
                 btnAgregar.Enabled = false;
             }

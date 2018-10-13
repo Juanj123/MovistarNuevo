@@ -156,8 +156,9 @@ namespace ProyectoMovistar
                         }
                         else
                         {
-                            if (h <= v.cantidad(varProducto))
-                            {
+                        //h = Convert.ToInt32(VentaList.Items[item1.Index].SubItems[1].Text) + varCantidad;
+                        if (varCantidad <= v.cantidad(varProducto))
+                        {
                                 elementosFila[0] = varProducto;
                                 elementosFila[1] = Convert.ToString(varCantidad);
                                 elementosFila[2] = Convert.ToString(varPrecio);
