@@ -44,7 +44,7 @@ namespace capaDatos
         }
         public void Ecabezado()
         {
-            linea.AppendLine("Producto      |  Cant | Precio  |  Total");
+            linea.AppendLine("Producto      |  Cant | Precio  |  Importe");
         }
         public void TextoIzquierda(string texto)
         {

@@ -115,6 +115,7 @@ namespace ProyectoMovistar
                     else
                     {
                         MessageBox.Show("Se excedió del limite de producto en inventario", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtBuscarProducto.Text = "";
                     }
                 }
                     else
@@ -150,7 +151,8 @@ namespace ProyectoMovistar
                             }
                             else {
                                 MessageBox.Show("Se excedió del limite de producto en inventario", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
+                                txtBuscarProducto.Text = "";
+                        }
 
 
                         }
@@ -177,7 +179,8 @@ namespace ProyectoMovistar
                             else
                             {
                                 MessageBox.Show("Se excedió del limite de producto en inventario", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
+                            txtBuscarProducto.Text = "";
+                        }
 
                         }
                     }
@@ -191,6 +194,7 @@ namespace ProyectoMovistar
             else
             {
                 MessageBox.Show("No se encuntra el producto", "Información",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                txtBuscarProducto.Text = "";
             }
 
         }
@@ -247,7 +251,7 @@ namespace ProyectoMovistar
                 txtTotal.Text = "";
                 txtCambio.Text = "";
                 lblFolio.Text = v.folio().ToString();
-
+                to = 0;
                 generaColumnas();
             }
         }
@@ -259,16 +263,17 @@ namespace ProyectoMovistar
             //ticket.AbreCajon();
 
             //Datos de la cabezera del Ticket
-            ticket.Textocentro("Yuriria Cell");
-            ticket.Textocentro("Reparacion y Venta de articulos");
+            ticket.Textocentro("             Yuriria Cell");
+            ticket.Textocentro("      Reparacion y Venta ");
+            ticket.Textocentro("    de articulos para moviles");
             ticket.TextoIzquierda("");
-            ticket.TextoIzquierda("Av. Morelos # 13");
-            ticket.TextoIzquierda("Zona Centro,38980 Yuriria,Gto.");
+            ticket.Textocentro("   Av. Morelos # 13");
+            ticket.Textocentro("  Zona Centro,38980 Yuriria,Gto.");
             ticket.lineasAsteriscos();
 
             //Sub cabecera
             ticket.textoExtremos("FECHA " + DateTime.Now.ToShortDateString(), "HORA" +"   "+ DateTime.Now.ToShortTimeString());
-            ticket.textoExtremos("Lo atendio: " + lblatendio.Text, "Numero Ticket:"+" "+ "AC0" + lblFolio.Text);
+            ticket.textoExtremos("Lo atendio: " + Program.nombre, "No.ticket:"+" "+ "AC0" + lblFolio.Text);
             ticket.lineasAsteriscos();
 
             //Articulos a vender
@@ -297,6 +302,11 @@ namespace ProyectoMovistar
             ticket.Textocentro("445 103 95 30");
             ticket.TextoIzquierda("");
             ticket.Textocentro("!GRACIAS POR SU COMPRA!");
+            ticket.TextoIzquierda("");
+            ticket.lineasAsteriscos();
+            ticket.TextoIzquierda("");
+            ticket.Textocentro("No nos hacemos responsables por equipos olvidados despues de 30 dias");
+            ticket.TextoIzquierda("");
             ticket.TextoIzquierda("");
             ticket.Textocentro("VUELVA PRONTO");
 

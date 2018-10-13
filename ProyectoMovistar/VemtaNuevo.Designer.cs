@@ -168,7 +168,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(41, 44);
+            this.label3.Location = new System.Drawing.Point(41, 49);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 17);
             this.label3.TabIndex = 5;
@@ -283,7 +283,7 @@
             // 
             this.lblatendio.AutoSize = true;
             this.lblatendio.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblatendio.Location = new System.Drawing.Point(110, 44);
+            this.lblatendio.Location = new System.Drawing.Point(110, 49);
             this.lblatendio.Name = "lblatendio";
             this.lblatendio.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblatendio.Size = new System.Drawing.Size(0, 17);
